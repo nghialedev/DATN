@@ -34,13 +34,61 @@ export class TasksService {
     }
   }
 
-  async findAll() {
+  async findAll(options?: { 
+    status?: string, 
+    priority?: string, 
+    userStoryId?: number,
+    page?: number,
+    limit?: number,
+    sortBy?: string,
+    sortOrder?: 'ASC' | 'DESC'
+  }) {
     try {
-      const tasks = await this.tasksRepository.find();
+      const queryBuilder = this.tasksRepository.createQueryBuilder('task');
+      
+      // Thêm relations để lấy thông tin liên quan
+      queryBuilder.leftJoinAndSelect('task.userStory_id', 'userStory');
+      
+      // Áp dụng các điều kiện lọc nếu có
+      if (options?.status) {
+        queryBuilder.andWhere('task.status = :status', { status: options.status });
+      }
+      
+      if (options?.priority) {
+        queryBuilder.andWhere('task.priority = :priority', { priority: options.priority });
+      }
+      
+      if (options?.userStoryId) {
+        queryBuilder.andWhere('task.userStory_id = :userStoryId', { userStoryId: options.userStoryId });
+      }
+      
+      // Thêm sắp xếp - SỬA PHẦN NÀY
+      const sortBy = options?.sortBy || 'created_at'; // Thay đổi từ createdAt thành created_at
+      const sortOrder = options?.sortOrder || 'DESC';
+      queryBuilder.orderBy(`task.${sortBy}`, sortOrder);
+      
+      // Thêm phân trang
+      if (options?.page && options?.limit) {
+        const skip = (options.page - 1) * options.limit;
+        queryBuilder.skip(skip).take(options.limit);
+      }
+      
+      // Thực hiện truy vấn và đếm tổng số bản ghi
+      const [tasks, total] = await queryBuilder.getManyAndCount();
+      
+      // Kiểm tra nếu không có task nào
+      if (tasks.length === 0) {
+        return this.Response.success(
+          SuccessStatusCodesEnum.Ok,
+          'No tasks found',
+          { tasks: [], total: 0 }
+        );
+      }
+      
       return this.Response.success(
         SuccessStatusCodesEnum.Ok,
         'All Tasks fetched successfully',
-        tasks,
+        { tasks, total, page: options?.page || 1, limit: options?.limit || total }
       );
     } catch (error) {
       console.log(error);

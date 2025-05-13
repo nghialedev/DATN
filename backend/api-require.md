@@ -24,19 +24,19 @@ Tất cả các API đều trả về response với cấu trúc thống nhất:
 
 ## Mục lục
 
-1. [Authentication](#1-authentication)
-2. [User Management](#2-user-management)
-3. [Project Management](#3-project-management)
-4. [Department Management](#4-department-management)
-5. [Task Management](#5-task-management)
-6. [User Story Management](#6-user-story-management)
-7. [Project Task Status](#7-project-task-status)
+1. [Authentication](#1-authentication) ok
+2. [User Management](#2-user-management) ok
+3. [Project Management](#3-project-management) ok
+4. [Department Management](#4-department-management) ok
+5. [Task Management](#5-task-management) ok 
+6. [User Story Management](#6-user-story-management) ok
+7. [Project Task Status](#7-project-task-status) 
 8. [Project User Assignment](#8-project-user-assignment)
 9. [Rate System](#9-rate-system)
 10. [Message & Chat](#10-message-chat)
 11. [User Tasks](#11-user-tasks)
 
-## 1. Authentication
+## 1. Authentication ok
 
 ### 1.1. Đăng nhập
 
@@ -145,7 +145,7 @@ Tất cả các API đều trả về response với cấu trúc thống nhất:
 }
 ```
 
-## 2. User Management
+## 2. User Management ok
 
 ### 2.1. Lấy danh sách người dùng
 

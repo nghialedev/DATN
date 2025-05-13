@@ -1,0 +1,270 @@
+### Biến môi trường
+@baseUrl = http://localhost:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+### ===== 1. AUTHENTICATION =====
+
+### 1.1. Đăng nhập
+POST {{baseUrl}}/user/login
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "123456"
+}
+
+### 1.2. Đăng ký
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "department_id": 1,
+  "username": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "123456",
+  "gender": "male",
+  "birth_date": "1995-01-01",
+  "profile": "image.png",
+  "rate": 5
+}
+
+### ===== 2. USER MANAGEMENT =====
+
+### 2.1. Lấy danh sách người dùng
+GET {{baseUrl}}/user
+Authorization: Bearer {{token}}
+
+### 2.2. Lấy thông tin người dùng
+GET {{baseUrl}}/user/1
+Authorization: Bearer {{token}}
+
+### 2.3. Cập nhật thông tin người dùng
+PATCH {{baseUrl}}/user/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "username": "John Updated",
+  "email": "john.updated@example.com",
+  "password": "newpassword123",
+  "gender": "male",
+  "birth_date": "1995-05-05",
+  "profile": "new-image.png",
+  "rate": 4,
+  "department_id": 2
+}
+
+### 2.4. Xóa người dùng
+DELETE {{baseUrl}}/user/1
+Authorization: Bearer {{token}}
+
+### ===== 3. PROJECT MANAGEMENT =====
+
+### 3.1. Tạo dự án mới
+POST {{baseUrl}}/project
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Project 1",
+  "start_date": "2024-01-01",
+  "end_date": "2024-12-31",
+  "client": "Client Company"
+}
+
+### 3.2. Lấy danh sách dự án
+GET {{baseUrl}}/project
+Authorization: Bearer {{token}}
+
+### 3.3. Lấy thông tin chi tiết dự án
+GET {{baseUrl}}/project/1
+Authorization: Bearer {{token}}
+
+### 3.4. Cập nhật thông tin dự án
+PATCH {{baseUrl}}/project/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Updated Project Name",
+  "end_date": "2025-01-31"
+}
+
+### 3.5. Xóa dự án
+DELETE {{baseUrl}}/project/1
+Authorization: Bearer {{token}}
+
+### ===== 4. DEPARTMENT MANAGEMENT =====
+
+### 4.1. Lấy danh sách phòng ban
+GET {{baseUrl}}/departments
+Authorization: Bearer {{token}}
+
+### ===== 5. TASK MANAGEMENT =====
+
+### 5.1. Tạo nhiệm vụ mới
+POST {{baseUrl}}/tasks
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Task 1",
+  "description": "Task description",
+  "story_point": 5,
+  "working_hours": 8,
+  "priority": "high"
+}
+
+### 5.2. Lấy danh sách nhiệm vụ
+GET {{baseUrl}}/tasks
+Authorization: Bearer {{token}}
+
+### 5.3. Lấy thông tin chi tiết nhiệm vụ
+GET {{baseUrl}}/tasks/1
+Authorization: Bearer {{token}}
+
+### 5.4. Cập nhật thông tin nhiệm vụ
+PATCH {{baseUrl}}/tasks/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Updated Task",
+  "priority": "medium"
+}
+
+### ===== 6. USER STORY MANAGEMENT =====
+
+### 6.1. Tạo User Story mới
+POST {{baseUrl}}/stories
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "User Story 1",
+  "description": "As a user, I want to...",
+  "story_point": 8,
+  "priority": "high"
+}
+
+### 6.2. Lấy danh sách User Story
+GET {{baseUrl}}/stories
+Authorization: Bearer {{token}}
+
+### 6.3. Lấy thông tin chi tiết User Story
+GET {{baseUrl}}/stories/1
+Authorization: Bearer {{token}}
+
+### 6.4. Cập nhật thông tin User Story
+PATCH {{baseUrl}}/stories/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Updated User Story",
+  "story_point": 5
+}
+
+### ===== 7. PROJECT TASK STATUS =====
+
+### 7.1. Lấy danh sách trạng thái nhiệm vụ
+GET {{baseUrl}}/project-task-status
+Authorization: Bearer {{token}}
+
+### 7.2. Lấy thông tin chi tiết trạng thái nhiệm vụ
+GET {{baseUrl}}/project-task-status/1
+Authorization: Bearer {{token}}
+
+### ===== 8. PROJECT USER ASSIGNMENT =====
+
+### 8.1. Thêm người dùng vào dự án
+POST {{baseUrl}}/project-user
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_id": 1,
+  "user_id": 1
+}
+
+### 8.2. Lấy danh sách người dùng trong dự án
+GET {{baseUrl}}/project-user?project_id=1
+Authorization: Bearer {{token}}
+
+### 8.3. Lấy thông tin chi tiết phân công
+GET {{baseUrl}}/project-user/1
+Authorization: Bearer {{token}}
+
+### 8.4. Xóa người dùng khỏi dự án
+DELETE {{baseUrl}}/project-user/1
+Authorization: Bearer {{token}}
+
+### ===== 9. RATE SYSTEM =====
+
+### 9.1. Đánh giá người dùng
+# Giả định endpoint dựa trên cấu trúc API
+POST {{baseUrl}}/rate
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "rate": 4,
+  "comment": "Good performance"
+}
+
+### ===== 10. MESSAGE & CHAT =====
+
+### 10.1. Gửi tin nhắn
+# Giả định endpoint dựa trên cấu trúc API
+POST {{baseUrl}}/message
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "receiver_id": 2,
+  "content": "Hello, how are you?"
+}
+
+### 10.2. Lấy danh sách tin nhắn
+# Giả định endpoint dựa trên cấu trúc API
+GET {{baseUrl}}/message
+Authorization: Bearer {{token}}
+
+### 10.3. Xem thông tin chi tiết tin nhắn
+GET {{baseUrl}}/message/1
+Authorization: Bearer {{token}}
+
+### ===== 11. USER TASKS =====
+
+### 11.1. Gán nhiệm vụ cho người dùng
+POST {{baseUrl}}/user-tasks
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "task_id": 2,
+  "project_task_status_id": 1,
+  "start_date": 1709836800,
+  "end_date": 1709923200,
+  "actual_working_time": 8
+}
+
+### 11.2. Lấy danh sách nhiệm vụ của người dùng
+GET {{baseUrl}}/user-tasks
+Authorization: Bearer {{token}}
+
+### 11.3. Lấy thông tin chi tiết nhiệm vụ của người dùng
+GET {{baseUrl}}/user-tasks/1
+Authorization: Bearer {{token}}
+
+### 11.4. Cập nhật nhiệm vụ của người dùng
+PATCH {{baseUrl}}/user-tasks/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_task_status_id": 2,
+  "actual_working_time": 10
+}
