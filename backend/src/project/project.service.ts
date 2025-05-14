@@ -34,13 +34,26 @@ export class ProjectService {
 
   async findAll(){
     try{
-      const projects = await this.projectRepository.find();
-      if(!projects){
+      // Sử dụng relations để load thông tin client
+      const projects = await this.projectRepository.find({
+        relations: ['client']
+      });
+      
+      if(!projects || projects.length === 0){
         return this.response.error(`No Projects found`, ErrorStatusCodesEnum.NotFound)
       }
-      else{
-        return this.response.success( SuccessStatusCodesEnum.Ok, "Created Successfully", projects);
-      }
+      
+      // Chuyển đổi kết quả để bao gồm client_id
+      const projectsWithClientId = projects.map(project => {
+        const { client, ...rest } = project;
+        return {
+          ...rest,
+          client_id: client ? client.id : null,
+          client: client // Giữ lại đối tượng client đầy đủ
+        };
+      });
+      
+      return this.response.success(SuccessStatusCodesEnum.Ok, "Projects retrieved successfully", projectsWithClientId);
     }
     catch(error){
       return this.response.error(error, ErrorStatusCodesEnum.BadRequest);

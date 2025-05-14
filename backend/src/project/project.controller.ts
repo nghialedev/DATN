@@ -5,6 +5,7 @@ import { UpdateProjectDto } from './dto/update-project.dto';
 import { JwtAuthGuard } from 'src/auth/guard/jwt-auth.guard';
 import { Role } from 'src/auth/decorator/roles.decorator';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiBearerAuth } from '@nestjs/swagger';
+import { Project } from './entities/project.entity';
 
 @ApiTags('Project')
 @ApiBearerAuth()
@@ -25,14 +26,14 @@ export class ProjectController {
 
   @Get()
   @ApiOperation({ summary: 'Get all projects' })
-  @ApiResponse({ status: 200, description: 'Return all projects', type: [CreateProjectDto] })
+  @ApiResponse({ status: 200, description: 'Return all projects', type: [Project] })
   findAll() {
     return this.projectService.findAll();
   }
 
   @Get(':id')
   @ApiOperation({ summary: 'Get project by id' })
-  @ApiResponse({ status: 200, description: 'Return the project', type: CreateProjectDto })
+  @ApiResponse({ status: 200, description: 'Return the project', type: Project })
   @ApiResponse({ status: 404, description: 'Project not found' })
   @ApiParam({ name: 'id', description: 'Project ID' })
   findOne(@Param('id') id: string, @Req() request) {
@@ -42,7 +43,7 @@ export class ProjectController {
   @Patch(':id')
   @Role('manager')
   @ApiOperation({ summary: 'Update project by id' })
-  @ApiResponse({ status: 200, description: 'Project successfully updated', type: CreateProjectDto })
+  @ApiResponse({ status: 200, description: 'Project successfully updated', type: Project })
   @ApiResponse({ status: 404, description: 'Project not found' })
   @ApiResponse({ status: 403, description: 'Forbidden - requires manager role' })
   @ApiParam({ name: 'id', description: 'Project ID' })

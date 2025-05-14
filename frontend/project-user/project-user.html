@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Phân Công Nhân Viên - Quản Lý Dự Án</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  
+  <!-- Custom CSS File -->
+  <link href="project-user.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Tìm kiếm" title="Nhập từ khóa tìm kiếm">
+        <button type="submit" title="Tìm kiếm"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">User</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>User</h6>
+              <span>Vị trí</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>Thông tin cá nhân</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#" id="logoutBtn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Đăng xuất</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../index.html">
+          <i class="bi bi-grid"></i>
+          <span>Trang Chủ</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../nhanvien/nhanvien.html">
+          <i class="bi bi-people"></i>
+          <span>Quản Lý Nhân Viên</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../phongban/phongban.html">
+          <i class="ri-group-2-line"></i>
+          <span>Quản Lý Phòng Ban</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../congviec/congviec.html">
+          <i class="bi bi-list-task"></i>
+          <span>Quản Lý Công Việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../duan/duan.html">
+          <i class="bi bi-kanban"></i>
+          <span>Quản Lý Dự Án</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../story/story.html">
+          <i class="bi bi-book"></i>
+          <span>Quản Lý User Story</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../task-status/task-status.html">
+          <i class="bi bi-clipboard-check"></i>
+          <span>Trạng Thái Công Việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="../project-user/project-user.html">
+          <i class="bi bi-person-check"></i>
+          <span>Phân Công Nhân Viên</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Phân Công Nhân Viên</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Trang Chủ</a></li>
+          <li class="breadcrumb-item active">Phân Công Nhân Viên</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <div class="filter-section">
+                <h5 class="card-title">Danh Sách Phân Công</h5>
+                <div class="d-flex">
+                  <select id="projectFilter" class="form-select me-2" style="width: 250px;">
+                    <option value="all">-- Tất cả dự án --</option>
+                  </select>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAssignmentModal">
+                    <i class="bi bi-plus-circle"></i> Thêm Nhân Viên Vào Dự Án
+                  </button>
+                </div>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">STT</th>
+                      <th scope="col">Dự Án</th>
+                      <th scope="col">Nhân Viên</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Vị Trí</th>
+                      <th scope="col" class="text-center">Ngày Thêm</th>
+                      <th scope="col" class="text-center">Thao Tác</th>
+                    </tr>
+                  </thead>
+                  <tbody id="assignmentsTableBody">
+                    <!-- Dữ liệu sẽ được thêm vào đây từ JavaScript -->
+                    <tr>
+                      <td colspan="7" class="text-center">Đang tải dữ liệu...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- Modal Thêm Phân Công -->
+  <div class="modal fade" id="addAssignmentModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Thêm Nhân Viên Vào Dự Án</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addAssignmentForm">
+            <div class="mb-3">
+              <label for="newAssignmentProject" class="form-label">Dự Án</label>
+              <select id="newAssignmentProject" class="form-select" required>
+                <option value="">-- Chọn Dự Án --</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="newAssignmentUser" class="form-label">Nhân Viên</label>
+              <select id="newAssignmentUser" class="form-select" required>
+                <option value="">-- Chọn Nhân Viên --</option>
+              </select>
+            </div>
+            <div class="text-end">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+              <button type="submit" class="btn btn-primary">Thêm</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Xem Chi Tiết -->
+  <div class="modal fade" id="viewAssignmentModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Chi Tiết Phân Công</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row detail-row">
+            <div class="col-md-4 detail-label">ID:</div>
+            <div class="col-md-8" id="viewAssignmentId">-</div>
+          </div>
+          <div class="row detail-row">
+            <div class="col-md-4 detail-label">Dự Án:</div>
+            <div class="col-md-8" id="viewAssignmentProject">-</div>
+          </div>
+          <div class="row detail-row">
+            <div class="col-md-4 detail-label">Nhân Viên:</div>
+            <div class="col-md-8" id="viewAssignmentUser">-</div>
+          </div>
+          <div class="row detail-row">
+            <div class="col-md-4 detail-label">Email:</div>
+            <div class="col-md-8" id="viewAssignmentEmail">-</div>
+          </div>
+          <div class="row detail-row">
+            <div class="col-md-4 detail-label">Vị Trí:</div>
+            <div class="col-md-8" id="viewAssignmentRole">-</div>
+          </div>
+          <div class="row detail-row">
+            <div class="col-md-4 detail-label">Ngày Thêm:</div>
+            <div class="col-md-8" id="viewAssignmentCreatedAt">-</div>
+          </div>
+          <div class="row detail-row">
+            <div class="col-md-4 detail-label">Cập Nhật:</div>
+            <div class="col-md-8" id="viewAssignmentUpdatedAt">-</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>2025</span></strong>. All Rights Reserved
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../assets/vendor/quill/quill.min.js"></script>
+  <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  
+  <!-- Project User Assignment JS File -->
+  <script src="project-user.js"></script>
+
+</body>
+
+</html>

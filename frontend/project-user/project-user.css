@@ -1,0 +1,148 @@
+/* Styles for Project User Assignment Module */
+
+/* Table styling */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: 600;
+  background-color: #f6f9ff;
+  border-color: #ebeef4;
+  padding: 0.8rem 0.6rem;
+}
+
+.table td {
+  padding: 0.8rem 0.6rem;
+  vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Action buttons styling */
+.btn-action-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.4rem;
+  font-size: 0.76rem;
+}
+
+/* User info pills */
+.user-role {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #e9ecef;
+}
+
+.user-role.admin {
+  background-color: #8da2fb;
+  color: #fff;
+}
+
+.user-role.developer {
+  background-color: #4dd4ac;
+  color: #fff;
+}
+
+.user-role.manager {
+  background-color: #ffb848;
+  color: #fff;
+}
+
+.user-role.client {
+  background-color: #f6c9cc;
+  color: #333;
+}
+
+/* Filter section styling */
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Modal styling enhancements */
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+/* Detail view styling */
+.detail-row {
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #566a7f;
+}
+
+/* Add Assignment Form */
+.form-control:focus, .form-select:focus {
+  border-color: #4154f1;
+  box-shadow: 0 0 0 0.2rem rgba(65, 84, 241, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table td, .table th {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.85rem;
+  }
+  
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-section select, .filter-section button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .btn-action-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-sm {
+    margin-bottom: 0.2rem;
+  }
+}

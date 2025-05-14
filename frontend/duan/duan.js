@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Lấy danh sách dự án
   fetchProjects();
+  console.log("Đã gọi API lấy danh sách dự án")
   
   // Lắng nghe sự kiện cho nút thêm dự án mới
   const saveProjectBtn = document.getElementById('saveProjectBtn');
