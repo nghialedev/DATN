@@ -1,0 +1,115 @@
+/* Custom CSS for Congviec module */
+
+/* Priority badge styling */
+.badge-low {
+  background-color: #84cc16 !important;
+  color: #fff;
+}
+
+.badge-medium {
+  background-color: #f97316 !important;
+  color: #fff;
+}
+
+.badge-high {
+  background-color: #ef4444 !important;
+  color: #fff;
+}
+
+/* Status badge styling */
+.badge-todo {
+  background-color: #6c757d !important;
+  color: #fff;
+}
+
+.badge-inprogress {
+  background-color: #3b82f6 !important;
+  color: #fff;
+}
+
+.badge-review {
+  background-color: #8b5cf6 !important;
+  color: #fff;
+}
+
+.badge-done {
+  background-color: #10b981 !important;
+  color: #fff;
+}
+
+/* Task table styling */
+.table th {
+  font-weight: 600;
+  text-align: center;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Action buttons styling */
+.btn-action {
+  margin: 0 2px;
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-action i {
+  font-size: 0.9rem;
+}
+
+/* Filter and search area */
+.filter-container {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .filter-container .col-md-3 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Modal responsive adjustments */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+}
+
+/* Alerts styling */
+.alert {
+  margin-top: 1rem;
+}
+
+/* Hover effect for rows */
+.table tbody tr {
+  transition: background-color 0.3s;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Task description text wrapping */
+.task-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+/* Form validation styling */
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+  border-color: #dc3545;
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+  border-color: #198754;
+}
+
+/* Card body extra spacing */
+.card-body {
+  padding: 1.5rem;
+}

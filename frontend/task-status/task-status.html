@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Quản lý trạng thái nhiệm vụ - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  
+  <!-- Module CSS File -->
+  <link href="task-status.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span id="userFullName" class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Image Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="userFullNameMenu">Kevin Anderson</h6>
+              <span id="userRoleMenu">Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#" id="logoutBtn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../phongban/phongban.html">
+          <i class="bi bi-building"></i>
+          <span>Quản lý phòng ban</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../nhanvien/nhanvien.html">
+          <i class="bi bi-people"></i>
+          <span>Quản lý nhân viên</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../duan/duan.html">
+          <i class="bi bi-briefcase"></i>
+          <span>Quản lý dự án</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../congviec/congviec.html">
+          <i class="bi bi-list-task"></i>
+          <span>Quản lý công việc</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../story/story.html">
+          <i class="bi bi-clipboard-data"></i>
+          <span>Quản lý User Story</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="../task-status/task-status.html">
+          <i class="bi bi-kanban"></i>
+          <span>Trạng thái dự án</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Trạng thái dự án</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active">Trạng thái dự án</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-4 mt-4">
+                <h5 class="card-title">Danh sách trạng thái dự án</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStatusModal" id="addStatusBtn">
+                  <i class="bi bi-plus-circle me-1"></i> Thêm trạng thái
+                </button>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <label class="input-group-text" for="projectFilter">Dự án:</label>
+                    <select class="form-select" id="projectFilter">
+                      <option value="all" selected>Tất cả dự án</option>
+                      <!-- Danh sách dự án sẽ được thêm vào bằng JavaScript -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bảng danh sách trạng thái dự án -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">#</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Dự án</th>
+                    <th scope="col" class="text-center">Ngày tạo</th>
+                    <th scope="col" class="text-center">Cập nhật</th>
+                    <th scope="col" class="text-center">Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="statusTableBody">
+                  <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Modal xem chi tiết trạng thái -->
+  <div class="modal fade" id="viewStatusModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Chi tiết trạng thái dự án</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3 row">
+            <label class="col-sm-4 col-form-label">ID:</label>
+            <div class="col-sm-8">
+              <p class="form-control-plaintext" id="viewStatusId"></p>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-4 col-form-label">Trạng thái:</label>
+            <div class="col-sm-8">
+              <p class="form-control-plaintext" id="viewStatusName"></p>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-4 col-form-label">Dự án:</label>
+            <div class="col-sm-8">
+              <p class="form-control-plaintext" id="viewStatusProject"></p>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-4 col-form-label">Ngày tạo:</label>
+            <div class="col-sm-8">
+              <p class="form-control-plaintext" id="viewCreatedAt"></p>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-4 col-form-label">Cập nhật:</label>
+            <div class="col-sm-8">
+              <p class="form-control-plaintext" id="viewUpdatedAt"></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal thêm trạng thái -->
+  <div class="modal fade" id="addStatusModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Thêm trạng thái dự án mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addStatusForm">
+            <div class="mb-3">
+              <label for="statusName" class="form-label">Tên trạng thái</label>
+              <input type="text" class="form-control" id="statusName" required>
+              <div class="invalid-feedback">
+                Vui lòng nhập tên trạng thái
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="projectSelect" class="form-label">Dự án</label>
+              <select class="form-select" id="projectSelect" required>
+                <option value="" selected disabled>Chọn dự án</option>
+                <!-- Danh sách dự án sẽ được thêm vào bằng JavaScript -->
+              </select>
+              <div class="invalid-feedback">
+                Vui lòng chọn dự án
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="button" class="btn btn-primary" id="saveStatusBtn">Lưu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal chỉnh sửa trạng thái -->
+  <div class="modal fade" id="editStatusModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Chỉnh sửa trạng thái dự án</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editStatusForm">
+            <input type="hidden" id="editStatusId">
+            <div class="mb-3">
+              <label for="editStatusName" class="form-label">Tên trạng thái</label>
+              <input type="text" class="form-control" id="editStatusName" required>
+              <div class="invalid-feedback">
+                Vui lòng nhập tên trạng thái
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="button" class="btn btn-primary" id="updateStatusBtn">Cập nhật</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal xóa trạng thái -->
+  <div class="modal fade" id="deleteStatusModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Xác nhận xóa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Bạn có chắc chắn muốn xóa trạng thái này không?</p>
+          <input type="hidden" id="deleteStatusId">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../assets/vendor/quill/quill.min.js"></script>
+  <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  
+  <!-- Module JS File -->
+  <script src="task-status.js"></script>
+
+</body>
+
+</html>

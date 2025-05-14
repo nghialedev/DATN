@@ -1,0 +1,196 @@
+/* Custom CSS for Nhanvien module */
+
+/* Status badge styling */
+.badge-active {
+  background-color: #22c55e !important;
+  color: white;
+}
+
+.badge-inactive {
+  background-color: #f97316 !important;
+  color: white;
+}
+
+.badge-terminated {
+  background-color: #dc2626 !important;
+  color: white;
+}
+
+/* Department badge styling */
+.badge-dev {
+  background-color: #3b82f6 !important;
+  color: white;
+}
+
+.badge-marketing {
+  background-color: #8b5cf6 !important;
+  color: white;
+}
+
+.badge-hr {
+  background-color: #ec4899 !important;
+  color: white;
+}
+
+.badge-finance {
+  background-color: #14b8a6 !important;
+  color: white;
+}
+
+/* Table responsive adjustments */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table th {
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #012970;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 0.75rem;
+}
+
+/* DataTable custom styling */
+.datatable-wrapper .datatable-container {
+  font-size: 0.9rem;
+}
+
+.datatable-wrapper .datatable-top,
+.datatable-wrapper .datatable-bottom {
+  padding: 0.75rem 0;
+}
+
+.datatable-wrapper .datatable-search {
+  float: right;
+}
+
+.datatable-wrapper .datatable-selector {
+  padding: 6px;
+  border-radius: 4px;
+  margin-right: 5px;
+  border-color: #ced4da;
+}
+
+.datatable-wrapper .datatable-input {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+/* Gender styling */
+.badge.gender-male {
+  background-color: #4154f1;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.badge.gender-female {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Action buttons styling */
+.btn-action {
+  margin: 0 2px;
+  transition: all 0.2s;
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* General table styling */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-striped tbody tr:hover {
+  background-color: rgba(65, 84, 241, 0.05) !important;
+}
+
+/* Status indicator */
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status-active {
+  background-color: #22c55e;
+}
+
+.status-inactive {
+  background-color: #dc2626;
+}
+
+/* Action buttons styling */
+.btn-action {
+  margin: 0 2px;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+}
+
+/* Modal responsive adjustments */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+}
+
+/* Form validation styling */
+.was-validated .form-control:invalid {
+  border-color: #dc3545;
+}
+
+.was-validated .form-control:valid {
+  border-color: #198754;
+}
+
+/* Employee profile card styling */
+.employee-card {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card .card-header {
+  background-color: #4154f1;
+  color: white;
+  padding: 1rem;
+}
+
+.employee-card .profile-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+/* Details page styling */
+.detail-label {
+  font-weight: 600;
+  color: #4154f1;
+}

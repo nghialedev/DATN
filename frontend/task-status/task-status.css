@@ -1,0 +1,158 @@
+/* Task Status Module CSS */
+
+/* Tùy chỉnh badge cho trạng thái nhiệm vụ */
+.status-badge {
+  padding: 0.5em 0.8em;
+  font-size: 0.8em;
+  font-weight: 600;
+  border-radius: 4px;
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+}
+
+.status-badge-pending {
+  background-color: #ffeca9;
+  color: #665600;
+}
+
+.status-badge-inprogress {
+  background-color: #c8e1ff;
+  color: #0055cc;
+}
+
+.status-badge-completed {
+  background-color: #cff4d2;
+  color: #1a7023;
+}
+
+.status-badge-canceled {
+  background-color: #ffd8d8;
+  color: #991717;
+}
+
+.status-badge-onhold {
+  background-color: #e0e0e0;
+  color: #555555;
+}
+
+/* Tùy chỉnh icon cho nút thao tác */
+.btn-action {
+  margin: 0 3px;
+  transition: transform 0.2s;
+}
+
+.btn-action:hover {
+  transform: scale(1.1);
+}
+
+/* Tạo phân tách giữa các thao tác */
+.table td:last-child {
+  white-space: nowrap;
+}
+
+/* Styling cho project filter */
+.input-group-text {
+  background-color: #f8f9fa;
+  color: #012970;
+  font-weight: 500;
+}
+
+.form-select:focus {
+  border-color: #4154f1;
+  box-shadow: 0 0 0 0.2rem rgba(65, 84, 241, 0.25);
+}
+
+/* Làm nổi bật trạng thái trong bảng */
+.table tbody tr td:nth-child(2) span {
+  font-weight: 600;
+}
+
+/* Hiệu ứng khi hover vào hàng trong bảng */
+.table tbody tr:hover {
+  background-color: rgba(65, 84, 241, 0.05);
+}
+
+/* Style cho modal header */
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  color: #012970;
+  font-weight: 600;
+}
+
+/* Style cho modal footer */
+.modal-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Hiệu ứng khi di chuột qua nút */
+.btn-primary {
+  background-color: #4154f1;
+  border-color: #4154f1;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #3242b8;
+  border-color: #2e3da4;
+}
+
+.btn-danger {
+  transition: all 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
+/* Định dạng form validation */
+.was-validated .form-control:invalid {
+  background-image: none;
+}
+
+/* Hiển thị dạng danh sách thông tin chi tiết */
+.form-control-plaintext {
+  padding-top: calc(0.375rem + 1px);
+  padding-bottom: calc(0.375rem + 1px);
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #012970;
+}
+
+/* Làm nổi bật thông tin trong modal xem chi tiết */
+#viewStatusId, #viewStatusName, #viewStatusProject, #viewCreatedAt, #viewUpdatedAt {
+  font-weight: 600;
+}
+
+/* Thêm hiệu ứng cho tooltip */
+.tooltip-inner {
+  background-color: #012970;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before, 
+.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #012970;
+}
+
+/* Chỉ hiển thị tooltip khi hover */
+.tooltip {
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .card-title {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+}

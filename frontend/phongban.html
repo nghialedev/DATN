@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Quản lý phòng ban - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Quản lý phòng ban</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Quản lý phòng ban</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Danh sách phòng ban</h5>
+
+              <!-- Nút thêm phòng ban mới -->
+              <div class="mb-3 d-flex justify-content-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDepartmentModal">
+                  <i class="bi bi-plus-circle"></i> Thêm phòng ban mới
+                </button>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Tên phòng ban</th>
+                    <th class="text-center">Ngày tạo</th>
+                    <th class="text-center">Ngày cập nhật</th>
+                    <th class="text-center">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Modal Thêm Phòng Ban Mới -->
+    <div class="modal fade" id="addDepartmentModal" tabindex="-1" aria-labelledby="addDepartmentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addDepartmentModalLabel">Thêm phòng ban mới</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addDepartmentForm">
+              <div class="mb-3">
+                <label for="departmentName" class="form-label">Tên phòng ban</label>
+                <input type="text" class="form-control" id="departmentName" required>
+                <div class="invalid-feedback">Tên phòng ban không được để trống</div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-primary" id="saveDepartmentBtn">Lưu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Xem Chi Tiết Phòng Ban -->
+    <div class="modal fade" id="viewDepartmentModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chi tiết phòng ban</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mb-3">
+              <div class="col-sm-4 fw-bold">ID:</div>
+              <div class="col-sm-8" id="viewDepartmentId"></div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-4 fw-bold">Tên phòng ban:</div>
+              <div class="col-sm-8" id="viewDepartmentName"></div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-4 fw-bold">Ngày tạo:</div>
+              <div class="col-sm-8" id="viewCreatedAt"></div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-4 fw-bold">Ngày cập nhật:</div>
+              <div class="col-sm-8" id="viewUpdatedAt"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Chỉnh Sửa Phòng Ban -->
+    <div class="modal fade" id="editDepartmentModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Chỉnh sửa phòng ban</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editDepartmentForm">
+              <input type="hidden" id="editDepartmentId">
+              <div class="mb-3">
+                <label for="editDepartmentName" class="form-label">Tên phòng ban</label>
+                <input type="text" class="form-control" id="editDepartmentName" required>
+                <div class="invalid-feedback">Tên phòng ban không được để trống</div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-primary" id="updateDepartmentBtn">Cập nhật</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Xóa Phòng Ban -->
+    <div class="modal fade" id="deleteDepartmentModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Xác nhận xóa</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Bạn có chắc chắn muốn xóa phòng ban này không?</p>
+            <input type="hidden" id="deleteDepartmentId">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- API Data Fetching Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lấy token từ sessionStorage hoặc localStorage, nếu không có thì sử dụng giá trị mặc định
+      const accessToken = sessionStorage.getItem('accessToken') || localStorage.getItem('accessToken') || "your_access_token_here";
+      
+      // Kiểm tra nếu không có token thì chuyển hướng về trang đăng nhập
+      if (!accessToken || accessToken === "your_access_token_here") {
+        window.location.href = "pages-login.html";
+        return;
+      }
+      
+      const myHeaders = new Headers();
+      myHeaders.append("Authorization", `Bearer ${accessToken}`);
+      myHeaders.append("Content-Type", "application/json");
+      
+      // Hàm để lấy danh sách phòng ban
+      function fetchDepartments() {
+        const requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch("http://localhost:3000/departments", requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            if (result.statusCode === 200 && result.data) {
+              populateTable(result.data);
+            } else {
+              console.error("Không thể lấy dữ liệu:", result.message);
+            }
+          })
+          .catch(error => console.error("Lỗi khi gọi API:", error));
+      }
+      
+      // Hàm để hiển thị dữ liệu vào bảng
+      function populateTable(departments) {
+        const tableBody = document.querySelector('.table.datatable tbody');
+        tableBody.innerHTML = ''; // Xóa dữ liệu cũ
+        
+        departments.forEach(dept => {
+          // Định dạng ngày tạo và cập nhật
+          const createdDate = new Date(dept.createdAt);
+          const updatedDate = new Date(dept.updatedAt);
+          
+          const formattedCreatedDate = `${createdDate.getDate()}/${createdDate.getMonth() + 1}/${createdDate.getFullYear()}`;
+          const formattedUpdatedDate = `${updatedDate.getDate()}/${updatedDate.getMonth() + 1}/${updatedDate.getFullYear()}`;
+          
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td class="text-center">${dept.id}</td>
+            <td>${dept.department}</td>
+            <td class="text-center">${formattedCreatedDate}</td>
+            <td class="text-center">${formattedUpdatedDate}</td>
+            <td class="text-center">
+              <button type="button" class="btn btn-info btn-sm view-btn" data-id="${dept.id}">
+                <i class="bi bi-eye"></i>
+              </button>
+              <button type="button" class="btn btn-warning btn-sm edit-btn" data-id="${dept.id}">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="${dept.id}">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+        
+        // Khởi tạo lại DataTable sau khi thêm dữ liệu
+        const dataTable = document.querySelector('.datatable');
+        if (dataTable) {
+          new simpleDatatables.DataTable(dataTable);
+        }
+        
+        // Thêm event listeners cho các nút
+        addButtonEventListeners();
+      }
+      
+      // Thêm event listeners cho các nút trong bảng
+      function addButtonEventListeners() {
+        // Nút xem chi tiết
+        document.querySelectorAll('.view-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const deptId = this.getAttribute('data-id');
+            viewDepartment(deptId);
+          });
+        });
+        
+        // Nút chỉnh sửa
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const deptId = this.getAttribute('data-id');
+            editDepartment(deptId);
+          });
+        });
+        
+        // Nút xóa
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const deptId = this.getAttribute('data-id');
+            document.getElementById('deleteDepartmentId').value = deptId;
+            const deleteModal = new bootstrap.Modal(document.getElementById('deleteDepartmentModal'));
+            deleteModal.show();
+          });
+        });
+      }
+      
+      // Hàm xem chi tiết phòng ban
+      function viewDepartment(id) {
+        const requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/departments/${id}`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            if (result.statusCode === 200 && result.data) {
+              const dept = result.data;
+              
+              // Định dạng ngày tạo và cập nhật
+              const createdDate = new Date(dept.createdAt);
+              const updatedDate = new Date(dept.updatedAt);
+              
+              const formattedCreatedDate = `${createdDate.getDate()}/${createdDate.getMonth() + 1}/${createdDate.getFullYear()}`;
+              const formattedUpdatedDate = `${updatedDate.getDate()}/${updatedDate.getMonth() + 1}/${updatedDate.getFullYear()}`;
+              
+              // Hiển thị thông tin trong modal
+              document.getElementById('viewDepartmentId').textContent = dept.id;
+              document.getElementById('viewDepartmentName').textContent = dept.department;
+              document.getElementById('viewCreatedAt').textContent = formattedCreatedDate;
+              document.getElementById('viewUpdatedAt').textContent = formattedUpdatedDate;
+              
+              // Hiển thị modal
+              const viewModal = new bootstrap.Modal(document.getElementById('viewDepartmentModal'));
+              viewModal.show();
+            } else {
+              console.error("Không thể lấy thông tin phòng ban:", result.message);
+            }
+          })
+          .catch(error => console.error("Lỗi khi gọi API:", error));
+      }
+      
+      // Hàm chỉnh sửa phòng ban
+      function editDepartment(id) {
+        const requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/departments/${id}`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            if (result.statusCode === 200 && result.data) {
+              const dept = result.data;
+              
+              // Hiển thị thông tin trong modal
+              document.getElementById('editDepartmentId').value = dept.id;
+              document.getElementById('editDepartmentName').value = dept.department;
+              
+              // Hiển thị modal
+              const editModal = new bootstrap.Modal(document.getElementById('editDepartmentModal'));
+              editModal.show();
+            } else {
+              console.error("Không thể lấy thông tin phòng ban:", result.message);
+            }
+          })
+          .catch(error => console.error("Lỗi khi gọi API:", error));
+      }
+      
+      // Xử lý sự kiện thêm phòng ban mới
+      document.getElementById('saveDepartmentBtn').addEventListener('click', function() {
+        const departmentName = document.getElementById('departmentName').value.trim();
+        
+        if (!departmentName) {
+          document.getElementById('departmentName').classList.add('is-invalid');
+          return;
+        }
+        
+        const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: JSON.stringify({ department: departmentName }),
+          redirect: "follow"
+        };
+        
+        fetch("http://localhost:3000/departments", requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            if (result.statusCode === 201) {
+              // Đóng modal
+              const modal = bootstrap.Modal.getInstance(document.getElementById('addDepartmentModal'));
+              modal.hide();
+              
+              // Reset form
+              document.getElementById('addDepartmentForm').reset();
+              
+              // Cập nhật lại bảng
+              fetchDepartments();
+              
+              // Hiển thị thông báo thành công
+              alert("Thêm phòng ban thành công!");
+            } else {
+              console.error("Không thể thêm phòng ban:", result.message);
+              alert("Không thể thêm phòng ban: " + result.message);
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error);
+            alert("Đã xảy ra lỗi khi thêm phòng ban!");
+          });
+      });
+      
+      // Xử lý sự kiện cập nhật phòng ban
+      document.getElementById('updateDepartmentBtn').addEventListener('click', function() {
+        const departmentId = document.getElementById('editDepartmentId').value;
+        const departmentName = document.getElementById('editDepartmentName').value.trim();
+        
+        if (!departmentName) {
+          document.getElementById('editDepartmentName').classList.add('is-invalid');
+          return;
+        }
+        
+        const requestOptions = {
+          method: "PATCH",
+          headers: myHeaders,
+          body: JSON.stringify({ department: departmentName }),
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/departments/${departmentId}`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            if (result.statusCode === 200) {
+              // Đóng modal
+              const modal = bootstrap.Modal.getInstance(document.getElementById('editDepartmentModal'));
+              modal.hide();
+              
+              // Cập nhật lại bảng
+              fetchDepartments();
+              
+              // Hiển thị thông báo thành công
+              alert("Cập nhật phòng ban thành công!");
+            } else {
+              console.error("Không thể cập nhật phòng ban:", result.message);
+              alert("Không thể cập nhật phòng ban: " + result.message);
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error);
+            alert("Đã xảy ra lỗi khi cập nhật phòng ban!");
+          });
+      });
+      
+      // Xử lý sự kiện xóa phòng ban
+      document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+        const departmentId = document.getElementById('deleteDepartmentId').value;
+        
+        const requestOptions = {
+          method: "DELETE",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/departments/${departmentId}`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            if (result.statusCode === 200) {
+              // Đóng modal
+              const modal = bootstrap.Modal.getInstance(document.getElementById('deleteDepartmentModal'));
+              modal.hide();
+              
+              // Cập nhật lại bảng
+              fetchDepartments();
+              
+              // Hiển thị thông báo thành công
+              alert("Xóa phòng ban thành công!");
+            } else {
+              console.error("Không thể xóa phòng ban:", result.message);
+              alert("Không thể xóa phòng ban: " + result.message);
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error);
+            alert("Đã xảy ra lỗi khi xóa phòng ban!");
+          });
+      });
+      
+      // Xử lý sự kiện khi nhập vào input để xóa thông báo lỗi
+      document.getElementById('departmentName').addEventListener('input', function() {
+        this.classList.remove('is-invalid');
+      });
+      
+      document.getElementById('editDepartmentName').addEventListener('input', function() {
+        this.classList.remove('is-invalid');
+      });
+      
+      // Lấy danh sách phòng ban khi trang được tải
+      fetchDepartments();
+    });
+  </script>
+
+</body>
+
+</html>

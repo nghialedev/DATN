@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Quản lý User Story - NiceAdmin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Tìm kiếm" title="Nhập từ khóa tìm kiếm">
+        <button type="submit" title="Tìm kiếm"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Nguyễn Văn A</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Nguyễn Văn A</h6>
+              <span>Quản lý dự án</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>Hồ sơ của tôi</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Trợ giúp</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-login.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Đăng xuất</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Trang Chủ</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="nhanvien.html">
+          <i class="bi bi-people"></i>
+          <span>Quản Lý Nhân Viên</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="phongban.html">
+          <i class="ri-group-2-line"></i>
+          <span>Quản Lý Phòng Ban</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="congviec.html">
+          <i class="bi bi-list-task"></i>
+          <span>Quản Lý Công Việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="duan.html">
+          <i class="bi bi-kanban"></i>
+          <span>Quản Lý Dự Án</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link" href="story.html">
+          <i class="bi bi-book"></i>
+          <span>Quản Lý User Story</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Quản lý User Story</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Quản lý User Story</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Danh sách User Story</h5>
+
+              <!-- Nút thêm User Story mới -->
+              <div class="mb-3 d-flex justify-content-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStoryModal">
+                  <i class="bi bi-plus-circle"></i> Thêm User Story mới
+                </button>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Tiêu đề</th>
+                    <th class="text-center">Mô tả</th>
+                    <th class="text-center">Story Point</th>
+                    <th class="text-center">Độ ưu tiên</th>
+                    <th class="text-center">Ngày tạo</th>
+                    <th class="text-center">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="storyTableBody">
+                  <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Story Modal -->
+    <div class="modal fade" id="addStoryModal" tabindex="-1" aria-labelledby="addStoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addStoryModalLabel">Thêm User Story mới</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addStoryForm">
+              <div class="mb-3">
+                <label for="storyTitle" class="form-label">Tiêu đề</label>
+                <input type="text" class="form-control" id="storyTitle" required>
+                <div class="invalid-feedback">Vui lòng nhập tiêu đề.</div>
+              </div>
+              <div class="mb-3">
+                <label for="storyDescription" class="form-label">Mô tả</label>
+                <textarea class="form-control" id="storyDescription" rows="3" required></textarea>
+                <div class="invalid-feedback">Vui lòng nhập mô tả.</div>
+              </div>
+              <div class="mb-3">
+                <label for="storyPoint" class="form-label">Story Point</label>
+                <input type="number" class="form-control" id="storyPoint" min="1" required>
+                <div class="invalid-feedback">Story Point phải là số nguyên dương.</div>
+              </div>
+              <div class="mb-3">
+                <label for="storyPriority" class="form-label">Độ ưu tiên</label>
+                <select class="form-select" id="storyPriority" required>
+                  <option value="" selected disabled>Chọn độ ưu tiên</option>
+                  <option value="low">Thấp</option>
+                  <option value="medium">Trung bình</option>
+                  <option value="high">Cao</option>
+                </select>
+                <div class="invalid-feedback">Vui lòng chọn độ ưu tiên.</div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-primary" id="saveStoryBtn">Lưu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story Detail Modal -->
+    <div class="modal fade" id="storyDetailModal" tabindex="-1" aria-labelledby="storyDetailModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="storyDetailModalLabel">Chi tiết User Story</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <h6>ID:</h6>
+                <p id="detailStoryId"></p>
+              </div>
+              <div class="col-md-6">
+                <h6>Tiêu đề:</h6>
+                <p id="detailStoryTitle"></p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <h6>Mô tả:</h6>
+                <p id="detailStoryDescription"></p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <h6>Story Point:</h6>
+                <p id="detailStoryPoint"></p>
+              </div>
+              <div class="col-md-6">
+                <h6>Độ ưu tiên:</h6>
+                <p id="detailStoryPriority"></p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <h6>Ngày tạo:</h6>
+                <p id="detailStoryCreatedAt"></p>
+              </div>
+              <div class="col-md-6">
+                <h6>Cập nhật lần cuối:</h6>
+                <p id="detailStoryUpdatedAt"></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Story Modal -->
+    <div class="modal fade" id="editStoryModal" tabindex="-1" aria-labelledby="editStoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editStoryModalLabel">Cập nhật User Story</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editStoryForm">
+              <input type="hidden" id="editStoryId">
+              <div class="mb-3">
+                <label for="editStoryTitle" class="form-label">Tiêu đề</label>
+                <input type="text" class="form-control" id="editStoryTitle" required>
+                <div class="invalid-feedback">Vui lòng nhập tiêu đề.</div>
+              </div>
+              <div class="mb-3">
+                <label for="editStoryDescription" class="form-label">Mô tả</label>
+                <textarea class="form-control" id="editStoryDescription" rows="3" required></textarea>
+                <div class="invalid-feedback">Vui lòng nhập mô tả.</div>
+              </div>
+              <div class="mb-3">
+                <label for="editStoryPoint" class="form-label">Story Point</label>
+                <input type="number" class="form-control" id="editStoryPoint" min="1" required>
+                <div class="invalid-feedback">Story Point phải là số nguyên dương.</div>
+              </div>
+              <div class="mb-3">
+                <label for="editStoryPriority" class="form-label">Độ ưu tiên</label>
+                <select class="form-select" id="editStoryPriority" required>
+                  <option value="" selected disabled>Chọn độ ưu tiên</option>
+                  <option value="low">Thấp</option>
+                  <option value="medium">Trung bình</option>
+                  <option value="high">Cao</option>
+                </select>
+                <div class="invalid-feedback">Vui lòng chọn độ ưu tiên.</div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-primary" id="updateStoryBtn">Cập nhật</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Story Confirmation Modal -->
+    <div class="modal fade" id="deleteStoryModal" tabindex="-1" aria-labelledby="deleteStoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteStoryModalLabel">Xác nhận xóa</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Bạn có chắc chắn muốn xóa User Story này không?</p>
+            <p><strong>ID:</strong> <span id="deleteStoryId"></span></p>
+            <p><strong>Tiêu đề:</strong> <span id="deleteStoryTitle"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- API Data Fetching Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lấy token từ localStorage hoặc sessionStorage, nếu không có thì sử dụng giá trị mặc định
+      const accessToken = sessionStorage.getItem('accessToken') || localStorage.getItem('accessToken') || "your_access_token_here";
+      
+      // Kiểm tra nếu không có token thì chuyển hướng về trang đăng nhập
+      if (!accessToken || accessToken === "your_access_token_here") {
+        window.location.href = "pages-login.html";
+        return;
+      }
+      
+      const myHeaders = new Headers();
+      myHeaders.append("Authorization", `Bearer ${accessToken}`);
+      
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+      };
+      
+      // Lấy danh sách User Story
+      function fetchStories() {
+        // Kiểm tra xem phần tử có tồn tại không trước khi thao tác
+        const tableBody = document.getElementById('storyTableBody');
+        if (!tableBody) {
+          console.error("Không tìm thấy phần tử với id 'storyTableBody'");
+          
+          // Tìm bảng datatable và tạo tbody nếu cần
+          const dataTable = document.querySelector('.datatable');
+          if (dataTable) {
+            // Kiểm tra xem đã có tbody chưa
+            let tbody = dataTable.querySelector('tbody');
+            if (!tbody) {
+              // Nếu chưa có tbody, tạo mới
+              tbody = document.createElement('tbody');
+              tbody.id = 'storyTableBody';
+              dataTable.appendChild(tbody);
+              console.log("Đã tạo mới phần tử tbody với id 'storyTableBody'");
+            } else {
+              // Nếu đã có tbody nhưng không có id, thêm id vào
+              tbody.id = 'storyTableBody';
+              console.log("Đã thêm id 'storyTableBody' vào phần tử tbody hiện có");
+            }
+          } else {
+            console.error("Không tìm thấy bảng với class 'datatable'");
+            return;
+          }
+        }
+        
+        // Hiển thị trạng thái đang tải
+        const updatedTableBody = document.getElementById('storyTableBody');
+        if (updatedTableBody) {
+          updatedTableBody.innerHTML = '<tr><td colspan="7" class="text-center">Đang tải dữ liệu...</td></tr>';
+        }
+        
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch("http://localhost:3000/stories", requestOptions)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Lỗi HTTP: ${response.status} - ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then(result => {
+            console.log("API response:", result);
+            // Kiểm tra xem result có phải là mảng không
+            if (Array.isArray(result)) {
+              populateTable(result);
+            } else if (result.data && Array.isArray(result.data)) {
+              // Nếu API trả về dạng {statusCode, data} thì lấy result.data
+              populateTable(result.data);
+            } else {
+              console.error("Không thể lấy dữ liệu: Định dạng dữ liệu không đúng");
+              const tableBody = document.getElementById('storyTableBody');
+              if (tableBody) {
+                tableBody.innerHTML = '<tr><td colspan="7" class="text-center text-danger">Không thể lấy dữ liệu: Định dạng dữ liệu không đúng</td></tr>';
+              }
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error.message);
+            const tableBody = document.getElementById('storyTableBody');
+            if (tableBody) {
+              tableBody.innerHTML = `<tr><td colspan="7" class="text-center text-danger">Lỗi kết nối: ${error.message}</td></tr>`;
+            }
+          });
+      }
+      
+      // Hiển thị danh sách User Story lên bảng
+      function populateTable(stories) {
+        const tableBody = document.getElementById('storyTableBody');
+        if (!tableBody) {
+          console.error("Không tìm thấy phần tử với id 'storyTableBody'");
+          return;
+        }
+        
+        tableBody.innerHTML = ''; // Xóa dữ liệu cũ
+        
+        if (stories.length === 0) {
+          const emptyRow = document.createElement('tr');
+          emptyRow.innerHTML = '<td colspan="7" class="text-center">Không có User Story nào</td>';
+          tableBody.appendChild(emptyRow);
+          return;
+        }
+        
+        stories.forEach((story, index) => {
+          // Định dạng ngày tạo
+          const createdDate = new Date(story.createdAt);
+          const formattedDate = `${createdDate.getDate()}/${createdDate.getMonth() + 1}/${createdDate.getFullYear()}`;
+          
+          // Chuyển đổi độ ưu tiên sang tiếng Việt để hiển thị
+          let priorityInVietnamese = '';
+          let priorityClass = '';
+          
+          switch(story.priority) {
+            case 'low':
+              priorityInVietnamese = 'Thấp';
+              priorityClass = 'badge bg-success';
+              break;
+            case 'medium':
+              priorityInVietnamese = 'Trung bình';
+              priorityClass = 'badge bg-warning';
+              break;
+            case 'high':
+              priorityInVietnamese = 'Cao';
+              priorityClass = 'badge bg-danger';
+              break;
+            default:
+              priorityInVietnamese = story.priority;
+              priorityClass = 'badge bg-secondary';
+          }
+          
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td class="text-center">${story.id}</td>
+            <td>${story.title}</td>
+            <td>${story.description.length > 50 ? story.description.substring(0, 50) + '...' : story.description}</td>
+            <td class="text-center">${story.story_point}</td>
+            <td class="text-center"><span class="${priorityClass}">${priorityInVietnamese}</span></td>
+            <td class="text-center">${formattedDate}</td>
+            <td class="text-center">
+              <button type="button" class="btn btn-primary btn-sm view-story me-1" data-id="${story.id}">
+                <i class="bi bi-eye"></i>
+              </button>
+              <button type="button" class="btn btn-warning btn-sm edit-story me-1" data-id="${story.id}">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button type="button" class="btn btn-danger btn-sm delete-story" data-id="${story.id}">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+        
+        // Thêm sự kiện cho nút xem chi tiết
+        document.querySelectorAll('.view-story').forEach(button => {
+          button.addEventListener('click', function() {
+            const storyId = this.getAttribute('data-id');
+            viewStoryDetail(storyId);
+          });
+        });
+        
+        // Khởi tạo DataTable sau khi dữ liệu đã được thêm vào bảng
+        try {
+          // Tìm bảng datatable
+          const dataTable = document.querySelector('.datatable');
+          
+          // Kiểm tra xem bảng đã tồn tại và đã được khởi tạo chưa
+          if (dataTable) {
+            // Nếu đã có instance của DataTable, hủy nó trước
+            if (dataTable.classList.contains('dataTable-table')) {
+              const container = dataTable.closest('.dataTable-container');
+              if (container && container.dataTable) {
+                container.dataTable.destroy();
+              }
+            }
+            
+            // Đợi một chút để DOM được cập nhật hoàn toàn
+            setTimeout(() => {
+              try {
+                new simpleDatatables.DataTable(dataTable);
+              } catch (err) {
+                console.error("Lỗi khi khởi tạo DataTable:", err);
+              }
+            }, 100);
+          }
+        } catch (error) {
+          console.error("Lỗi khi xử lý DataTable:", error);
+        }
+      }
+      
+      // Xem chi tiết User Story
+      function viewStoryDetail(id) {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/stories/${id}`, requestOptions)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Lỗi HTTP: ${response.status} - ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then(result => {
+            console.log("API story detail response:", result);
+            // Kiểm tra cấu trúc dữ liệu
+            const story = Array.isArray(result) ? result[0] : 
+                         (result.data ? result.data : result);
+            
+            if (story && story.id) {
+              // Định dạng ngày tạo và cập nhật
+              const createdDate = new Date(story.createdAt);
+              const updatedDate = new Date(story.updatedAt);
+              const formattedCreatedDate = `${createdDate.getDate()}/${createdDate.getMonth() + 1}/${createdDate.getFullYear()} ${createdDate.getHours()}:${String(createdDate.getMinutes()).padStart(2, '0')}`;
+              const formattedUpdatedDate = `${updatedDate.getDate()}/${updatedDate.getMonth() + 1}/${updatedDate.getFullYear()} ${updatedDate.getHours()}:${String(updatedDate.getMinutes()).padStart(2, '0')}`;
+              
+              // Chuyển đổi độ ưu tiên sang tiếng Việt để hiển thị
+              let priorityInVietnamese = '';
+              
+              switch(story.priority) {
+                case 'low':
+                  priorityInVietnamese = 'Thấp';
+                  break;
+                case 'medium':
+                  priorityInVietnamese = 'Trung bình';
+                  break;
+                case 'high':
+                  priorityInVietnamese = 'Cao';
+                  break;
+                default:
+                  priorityInVietnamese = story.priority;
+              }
+              
+              // Hiển thị thông tin chi tiết
+              document.getElementById('detailStoryId').textContent = story.id;
+              document.getElementById('detailStoryTitle').textContent = story.title;
+              document.getElementById('detailStoryDescription').textContent = story.description;
+              document.getElementById('detailStoryPoint').textContent = story.story_point;
+              document.getElementById('detailStoryPriority').textContent = priorityInVietnamese;
+              document.getElementById('detailStoryCreatedAt').textContent = formattedCreatedDate;
+              document.getElementById('detailStoryUpdatedAt').textContent = formattedUpdatedDate;
+              
+              // Hiển thị modal
+              const storyDetailModal = new bootstrap.Modal(document.getElementById('storyDetailModal'));
+              storyDetailModal.show();
+            } else {
+              console.error("Không thể lấy thông tin chi tiết User Story");
+              alert("Không thể lấy thông tin chi tiết User Story");
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error.message);
+            alert(`Lỗi khi lấy thông tin chi tiết: ${error.message}`);
+          });
+      }
+      
+      // Thêm User Story mới
+      document.getElementById('saveStoryBtn').addEventListener('click', function() {
+        const form = document.getElementById('addStoryForm');
+        
+        // Kiểm tra form hợp lệ
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+        
+        const title = document.getElementById('storyTitle').value;
+        const description = document.getElementById('storyDescription').value;
+        const story_point = parseInt(document.getElementById('storyPoint').value);
+        const priority = document.getElementById('storyPriority').value;
+        
+        const requestBody = {
+          title,
+          description,
+          story_point,
+          priority
+        };
+        
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const createOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: JSON.stringify(requestBody),
+          redirect: "follow"
+        };
+        
+        fetch("http://localhost:3000/stories", createOptions)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Lỗi HTTP: ${response.status} - ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then(result => {
+            console.log("API create story response:", result);
+            
+            // Kiểm tra kết quả trả về
+            if ((result.statusCode === 201 && result.data) || 
+                (result.id && result.title)) {
+              // Đóng modal
+              const modal = bootstrap.Modal.getInstance(document.getElementById('addStoryModal'));
+              modal.hide();
+              
+              // Reset form
+              form.reset();
+              form.classList.remove('was-validated');
+              
+              // Cập nhật lại bảng
+              fetchStories();
+              
+              // Hiển thị thông báo thành công
+              alert("Thêm User Story thành công!");
+            } else {
+              console.error("Không thể thêm User Story:", result.message || "Lỗi không xác định");
+              alert("Không thể thêm User Story: " + (result.message || "Lỗi không xác định"));
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error.message);
+            alert("Đã xảy ra lỗi khi thêm User Story: " + error.message);
+          });
+      });
+      
+      // Thêm sự kiện cho nút xem chi tiết, sửa và xóa
+      document.querySelectorAll('.view-story').forEach(button => {
+        button.addEventListener('click', function() {
+          const storyId = this.getAttribute('data-id');
+          viewStoryDetail(storyId);
+        });
+      });
+      
+      document.querySelectorAll('.edit-story').forEach(button => {
+        button.addEventListener('click', function() {
+          const storyId = this.getAttribute('data-id');
+          editStory(storyId);
+        });
+      });
+      
+      document.querySelectorAll('.delete-story').forEach(button => {
+        button.addEventListener('click', function() {
+          const storyId = this.getAttribute('data-id');
+          confirmDeleteStory(storyId);
+        });
+      });
+      
+      // Sửa User Story
+      function editStory(id) {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/stories/${id}`, requestOptions)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Lỗi HTTP: ${response.status} - ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then(result => {
+            console.log("API story detail for edit response:", result);
+            
+            // Kiểm tra cấu trúc dữ liệu
+            const story = Array.isArray(result) ? result[0] : 
+                         (result.data ? result.data : result);
+            
+            if (story && story.id) {
+              // Điền thông tin vào form
+              document.getElementById('editStoryId').value = story.id;
+              document.getElementById('editStoryTitle').value = story.title;
+              document.getElementById('editStoryDescription').value = story.description;
+              document.getElementById('editStoryPoint').value = story.story_point;
+              document.getElementById('editStoryPriority').value = story.priority;
+              
+              // Hiển thị modal
+              const editStoryModal = new bootstrap.Modal(document.getElementById('editStoryModal'));
+              editStoryModal.show();
+            } else {
+              console.error("Không thể lấy thông tin chi tiết User Story");
+              alert("Không thể lấy thông tin chi tiết User Story");
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error.message);
+            alert(`Lỗi khi lấy thông tin chi tiết: ${error.message}`);
+          });
+      }
+      
+      // Cập nhật User Story
+      document.getElementById('updateStoryBtn').addEventListener('click', function() {
+        const form = document.getElementById('editStoryForm');
+        
+        // Kiểm tra form hợp lệ
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+        
+        const id = document.getElementById('editStoryId').value;
+        const title = document.getElementById('editStoryTitle').value;
+        const description = document.getElementById('editStoryDescription').value;
+        const story_point = parseInt(document.getElementById('editStoryPoint').value);
+        const priority = document.getElementById('editStoryPriority').value;
+        
+        const requestBody = {
+          title,
+          description,
+          story_point,
+          priority
+        };
+        
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const updateOptions = {
+          method: "PATCH",
+          headers: myHeaders,
+          body: JSON.stringify(requestBody),
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/stories/${id}`, updateOptions)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Lỗi HTTP: ${response.status} - ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then(result => {
+            console.log("API update story response:", result);
+            
+            // Kiểm tra kết quả trả về
+            if ((result.statusCode === 200 && result.data) || 
+                (result.id && result.title)) {
+              // Đóng modal
+              const modal = bootstrap.Modal.getInstance(document.getElementById('editStoryModal'));
+              modal.hide();
+              
+              // Reset form
+              form.classList.remove('was-validated');
+              
+              // Cập nhật lại bảng
+              fetchStories();
+              
+              // Hiển thị thông báo thành công
+              alert("Cập nhật User Story thành công!");
+            } else {
+              console.error("Không thể cập nhật User Story:", result.message || "Lỗi không xác định");
+              alert("Không thể cập nhật User Story: " + (result.message || "Lỗi không xác định"));
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error.message);
+            alert("Đã xảy ra lỗi khi cập nhật User Story: " + error.message);
+          });
+      });
+      
+      // Xác nhận xóa User Story
+      function confirmDeleteStory(id) {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/stories/${id}`, requestOptions)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Lỗi HTTP: ${response.status} - ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then(result => {
+            // Kiểm tra cấu trúc dữ liệu
+            const story = Array.isArray(result) ? result[0] : 
+                         (result.data ? result.data : result);
+            
+            if (story && story.id) {
+              // Hiển thị thông tin xác nhận
+              document.getElementById('deleteStoryId').textContent = story.id;
+              document.getElementById('deleteStoryTitle').textContent = story.title;
+              
+              // Lưu ID vào nút xác nhận
+              document.getElementById('confirmDeleteBtn').setAttribute('data-id', story.id);
+              
+              // Hiển thị modal
+              const deleteStoryModal = new bootstrap.Modal(document.getElementById('deleteStoryModal'));
+              deleteStoryModal.show();
+            } else {
+              console.error("Không thể lấy thông tin chi tiết User Story");
+              alert("Không thể lấy thông tin chi tiết User Story");
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error.message);
+            alert(`Lỗi khi lấy thông tin chi tiết: ${error.message}`);
+          });
+      }
+      
+      // Xóa User Story
+      document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const deleteOptions = {
+          method: "DELETE",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/stories/${id}`, deleteOptions)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Lỗi HTTP: ${response.status} - ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then(result => {
+            console.log("API delete story response:", result);
+            
+            // Đóng modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('deleteStoryModal'));
+            modal.hide();
+            
+            // Cập nhật lại bảng
+            fetchStories();
+            
+            // Hiển thị thông báo thành công
+            alert("Xóa User Story thành công!");
+          })
+          .catch(error => {
+            console.error("Lỗi khi gọi API:", error.message);
+            alert("Đã xảy ra lỗi khi xóa User Story: " + error.message);
+          });
+      });
+      
+      // Khởi tạo trang - đảm bảo chạy sau khi DOM đã tải xong
+      setTimeout(fetchStories, 100);
+    });
+  </script>
+
+</body>
+
+</html>

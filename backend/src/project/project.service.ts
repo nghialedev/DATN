@@ -20,8 +20,12 @@ export class ProjectService {
   ){}
   async create(createProjectDto: CreateProjectDto) {
     try{
-      const newProject = await this.projectRepository.save({...createProjectDto,});
-      return this.response.success( SuccessStatusCodesEnum.Ok, "Created Successfully", newProject);
+      // Convert client_id to proper format for the new relationship
+      const newProject = await this.projectRepository.save({
+        ...createProjectDto,
+        client: { id: createProjectDto.client_id } // Create reference to User entity
+      });
+      return this.response.success(SuccessStatusCodesEnum.Ok, "Created Successfully", newProject);
     }
     catch(error){
       return this.response.error(error, ErrorStatusCodesEnum.BadRequest)

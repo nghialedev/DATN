@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Quản lý User Story - NiceAdmin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  
+  <!-- Custom CSS File -->
+  <link href="story.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Tìm kiếm" title="Nhập từ khóa tìm kiếm">
+        <button type="submit" title="Tìm kiếm"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Nguyễn Văn A</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Nguyễn Văn A</h6>
+              <span>Quản lý dự án</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>Hồ sơ của tôi</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Trợ giúp</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../pages-login/pages-login.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Đăng xuất</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../index.html">
+          <i class="bi bi-grid"></i>
+          <span>Trang Chủ</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../nhanvien/nhanvien.html">
+          <i class="bi bi-people"></i>
+          <span>Quản Lý Nhân Viên</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../phongban/phongban.html">
+          <i class="ri-group-2-line"></i>
+          <span>Quản Lý Phòng Ban</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../congviec/congviec.html">
+          <i class="bi bi-list-task"></i>
+          <span>Quản Lý Công Việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../duan/duan.html">
+          <i class="bi bi-kanban"></i>
+          <span>Quản Lý Dự Án</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link" href="../story/story.html">
+          <i class="bi bi-book"></i>
+          <span>Quản Lý User Story</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Quản lý User Story</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Quản lý User Story</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Danh sách User Story</h5>
+
+              <!-- Filter and Search -->
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <select id="priorityFilter" class="form-select">
+                    <option value="">Tất cả mức độ ưu tiên</option>
+                    <option value="low">Thấp</option>
+                    <option value="medium">Trung bình</option>
+                    <option value="high">Cao</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm theo tiêu đề hoặc mô tả...">
+                    <button class="btn btn-outline-secondary" type="button" id="searchButton">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-end">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStoryModal">
+                    <i class="bi bi-plus-circle"></i> Thêm mới
+                  </button>
+                </div>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Tiêu đề</th>
+                    <th class="text-center">Mô tả</th>
+                    <th class="text-center">Story Point</th>
+                    <th class="text-center">Độ ưu tiên</th>
+                    <th class="text-center">Ngày tạo</th>
+                    <th class="text-center">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="storyTableBody">
+                  <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Story Modal -->
+    <div class="modal fade" id="addStoryModal" tabindex="-1" aria-labelledby="addStoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addStoryModalLabel">Thêm User Story mới</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addStoryForm">
+              <div class="mb-3">
+                <label for="newStoryTitle" class="form-label">Tiêu đề</label>
+                <input type="text" class="form-control" id="newStoryTitle" required>
+                <div class="invalid-feedback">Vui lòng nhập tiêu đề.</div>
+              </div>
+              <div class="mb-3">
+                <label for="newStoryDescription" class="form-label">Mô tả</label>
+                <textarea class="form-control" id="newStoryDescription" rows="3"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="newStoryPoint" class="form-label">Story Point</label>
+                <input type="number" class="form-control" id="newStoryPoint" min="0" value="0">
+              </div>
+              <div class="mb-3">
+                <label for="newStoryPriority" class="form-label">Độ ưu tiên</label>
+                <select class="form-select" id="newStoryPriority" required>
+                  <option value="low">Thấp</option>
+                  <option value="medium" selected>Trung bình</option>
+                  <option value="high">Cao</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-primary" id="addStoryButton">Lưu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story Detail Modal -->
+    <div class="modal fade" id="storyDetailModal" tabindex="-1" aria-labelledby="storyDetailModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="storyDetailModalLabel">Chi tiết User Story</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <h6>Tiêu đề:</h6>
+                <p id="storyDetailTitle"></p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <h6>Mô tả:</h6>
+                <p id="storyDetailDescription"></p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <h6>Story Point:</h6>
+                <p id="storyDetailStoryPoint"></p>
+              </div>
+              <div class="col-md-6">
+                <h6>Độ ưu tiên:</h6>
+                <p id="storyDetailPriority"></p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <h6>Ngày tạo:</h6>
+                <p id="storyDetailCreatedAt"></p>
+              </div>
+              <div class="col-md-6">
+                <h6>Cập nhật lần cuối:</h6>
+                <p id="storyDetailUpdatedAt"></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Story Modal -->
+    <div class="modal fade" id="editStoryModal" tabindex="-1" aria-labelledby="editStoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editStoryModalLabel">Cập nhật User Story</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editStoryForm">
+              <input type="hidden" id="editStoryId">
+              <div class="mb-3">
+                <label for="editStoryTitle" class="form-label">Tiêu đề</label>
+                <input type="text" class="form-control" id="editStoryTitle" required>
+                <div class="invalid-feedback">Vui lòng nhập tiêu đề.</div>
+              </div>
+              <div class="mb-3">
+                <label for="editStoryDescription" class="form-label">Mô tả</label>
+                <textarea class="form-control" id="editStoryDescription" rows="3" required></textarea>
+                <div class="invalid-feedback">Vui lòng nhập mô tả.</div>
+              </div>
+              <div class="mb-3">
+                <label for="editStoryPoint" class="form-label">Story Point</label>
+                <input type="number" class="form-control" id="editStoryPoint" min="1" required>
+                <div class="invalid-feedback">Story Point phải là số nguyên dương.</div>
+              </div>
+              <div class="mb-3">
+                <label for="editStoryPriority" class="form-label">Độ ưu tiên</label>
+                <select class="form-select" id="editStoryPriority" required>
+                  <option value="" selected disabled>Chọn độ ưu tiên</option>
+                  <option value="low">Thấp</option>
+                  <option value="medium">Trung bình</option>
+                  <option value="high">Cao</option>
+                </select>
+                <div class="invalid-feedback">Vui lòng chọn độ ưu tiên.</div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-primary" id="saveEditButton">Lưu thay đổi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Story Confirmation Modal -->
+    <div class="modal fade" id="deleteStoryModal" tabindex="-1" aria-labelledby="deleteStoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteStoryModalLabel">Xác nhận xóa</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Bạn có chắc chắn muốn xóa User Story này không?</p>
+            <p><strong>ID:</strong> <span id="deleteStoryId"></span></p>
+            <p><strong>Tiêu đề:</strong> <span id="deleteStoryTitle"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../assets/vendor/quill/quill.js"></script>
+  <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  
+  <!-- Custom JS File -->
+  <script src="story.js"></script>
+
+</body>
+
+</html>

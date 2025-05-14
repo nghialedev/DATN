@@ -83,6 +83,6 @@ export class User {
     @OneToMany(()=> Message, message => message.receiver_id)
     messageReceived: Message[];
 
-    @OneToOne(()=> Project, project => project.client_id)
-    project: Project;
+    @OneToMany(()=> Project, project => project.client)
+    projects: Project[];
 }

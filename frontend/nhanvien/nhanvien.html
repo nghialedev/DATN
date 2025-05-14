@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Quản lý nhân viên - NiceAdmin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <!-- Removed Quill CSS references as they are not needed for this module -->
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  
+  <!-- Custom CSS File -->
+  <link href="nhanvien.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Tìm kiếm" title="Nhập từ khóa tìm kiếm">
+        <button type="submit" title="Tìm kiếm"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Nguyễn Văn A</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Nguyễn Văn A</h6>
+              <span>Quản lý dự án</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>Hồ sơ của tôi</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Trợ giúp</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../pages-login/pages-login.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Đăng xuất</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../index.html">
+          <i class="bi bi-grid"></i>
+          <span>Trang Chủ</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="../nhanvien/nhanvien.html">
+          <i class="bi bi-people"></i>
+          <span>Quản Lý Nhân Viên</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../phongban/phongban.html">
+          <i class="ri-group-2-line"></i>
+          <span>Quản Lý Phòng Ban</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../congviec/congviec.html">
+          <i class="bi bi-list-task"></i>
+          <span>Quản Lý Công Việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../duan/duan.html">
+          <i class="bi bi-kanban"></i>
+          <span>Quản Lý Dự Án</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../story/story.html">
+          <i class="bi bi-book"></i>
+          <span>Quản Lý User Story</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../task-status/task-status.html">
+          <i class="bi bi-book"></i>
+          <span>Trạng thái công việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Quản lý nhân viên</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Quản lý nhân viên</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title">Danh sách nhân viên</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                  <i class="bi bi-plus-circle"></i> Thêm nhân viên mới
+                </button>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <div class="table-responsive">
+                <table class="table table-striped datatable">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center" style="width: 50px">#</th>
+                      <th scope="col">Họ tên</th>
+                      <th scope="col">Email</th>
+                      <th scope="col" class="text-center" style="width: 80px">Giới tính</th>
+                      <th scope="col">Phòng ban</th>
+                      <th scope="col">Vị trí</th>
+                      <th scope="col" class="text-center">Ngày sinh</th>
+                      <th scope="col" class="text-center">Trạng thái</th>
+                      <th scope="col" class="text-center">Hành động</th>
+                    </tr>
+                  </thead>
+                  <tbody id="userTableBody">
+                    <!-- Data will be loaded dynamically -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- End Table with stripped rows -->
+
+              <!-- Khu vực để tạo các modal động -->
+              <div id="dynamicModals">
+                <!-- Các modal sẽ được tạo động bằng JavaScript -->
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../assets/vendor/echarts/echarts.min.js"></script>
+  <!-- Removed Quill JS reference as it is not needed for this module -->
+  <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  
+  <!-- Custom JS File -->
+  <script src="nhanvien.js"></script>
+  
+  <!-- Modal thêm người dùng mới -->
+  <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addUserModalLabel">Thêm nhân viên mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addUserForm">
+            <div class="mb-3">
+              <label for="userName" class="form-label">Họ tên</label>
+              <input type="text" class="form-control" id="userName" required>
+            </div>
+            <div class="mb-3">
+              <label for="userEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="userEmail" required>
+            </div>
+            <div class="mb-3">
+              <label for="userGender" class="form-label">Giới tính</label>
+              <select class="form-select" id="userGender" required>
+                <option value="">-- Chọn giới tính --</option>
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="userDepartment" class="form-label">Phòng ban</label>
+              <select class="form-select" id="userDepartment" required>
+                <option value="">-- Chọn phòng ban --</option>
+                <!-- Danh sách phòng ban sẽ được nạp động từ API -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="userRole" class="form-label">Vai trò</label>
+              <select class="form-select" id="userRole" required>
+                <option value="">-- Chọn vai trò --</option>
+                <option value="manager">Manager</option>
+                <option value="developer">Developer</option>
+                <option value="tester">Tester</option>
+                <option value="designer">Designer</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="userBirthDate" class="form-label">Ngày sinh</label>
+              <input type="date" class="form-control" id="userBirthDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="userPassword" class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" id="userPassword" placeholder="Mật khẩu mặc định cho tài khoản mới" required>
+            </div>
+            <div class="mb-3">
+              <label for="userRate" class="form-label">Đánh giá</label>
+              <select class="form-select" id="userRate" required>
+                <option value="">-- Chọn đánh giá --</option>
+                <option value="1">1 sao</option>
+                <option value="2">2 sao</option>
+                <option value="3">3 sao</option>
+                <option value="4">4 sao</option>
+                <option value="5">5 sao</option>
+              </select>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="userActive" checked>
+              <label class="form-check-label" for="userActive">Kích hoạt tài khoản</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="button" class="btn btn-primary" id="saveUserBtn">Lưu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

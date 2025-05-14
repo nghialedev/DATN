@@ -31,9 +31,9 @@ export class Project {
   @Column({ type: 'date' })
   end_date: Date;
 
-  @OneToOne(() => User, user => user.id)
+  @ManyToOne(() => User)
   @JoinColumn({ name: 'client_id' })
-  client_id: number;
+  client: User;
 
   @CreateDateColumn({ type: 'timestamp with time zone' })
   createdAt: Date;
@@ -44,7 +44,6 @@ export class Project {
   @DeleteDateColumn({ type: 'timestamp with time zone' })
   deletedAt: Date;
 
- 
   @OneToMany(() => ProjectUser, (projectUser) => projectUser.project_id)
   projectUsers: ProjectUser[];
 

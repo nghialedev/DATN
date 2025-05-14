@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Quản lý dự án - NiceAdmin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <!-- Removed Quill CSS references as they are not needed for this module -->
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  
+  <!-- Custom CSS File -->
+  <link href="duan.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Tìm kiếm" title="Nhập từ khóa tìm kiếm">
+        <button type="submit" title="Tìm kiếm"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Nguyễn Văn A</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Nguyễn Văn A</h6>
+              <span>Quản lý dự án</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>Hồ sơ của tôi</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Trợ giúp</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../pages-login/pages-login.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Đăng xuất</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../index.html">
+          <i class="bi bi-grid"></i>
+          <span>Trang Chủ</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="../nhanvien/nhanvien.html">
+          <i class="bi bi-people"></i>
+          <span>Quản Lý Nhân Viên</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../phongban/phongban.html">
+          <i class="ri-group-2-line"></i>
+          <span>Quản Lý Phòng Ban</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../congviec/congviec.html">
+          <i class="bi bi-list-task"></i>
+          <span>Quản Lý Công Việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../duan/duan.html">
+          <i class="bi bi-kanban"></i>
+          <span>Quản Lý Dự Án</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../story/story.html">
+          <i class="bi bi-book"></i>
+          <span>Quản Lý User Story</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../task-status/task-status.html">
+          <i class="bi bi-book"></i>
+          <span>Trạng thái công việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Quản lý dự án</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Quản lý dự án</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title">Danh sách dự án</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProjectModal">
+                  <i class="bi bi-plus-circle"></i> Thêm dự án mới
+                </button>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center" style="width: 50px">#</th>
+                      <th scope="col">Tên dự án</th>
+                      <th scope="col">Ngày bắt đầu</th>
+                      <th scope="col">Ngày kết thúc</th>
+                      <th scope="col">ID Khách hàng</th>
+                      <th scope="col">Ngày tạo</th>
+                      <th scope="col" class="text-center">Hành động</th>
+                    </tr>
+                  </thead>
+                  <tbody id="projectTableBody">
+                    <!-- Data will be loaded dynamically -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- End Table with stripped rows -->
+
+              <!-- Khu vực để tạo các modal động -->
+              <div id="dynamicModals">
+                <!-- Các modal sẽ được tạo động bằng JavaScript -->
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../assets/vendor/echarts/echarts.min.js"></script>
+  <!-- Removed Quill JS reference as it is not needed for this module -->
+  <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  
+  <!-- Phòng ban API JS File -->
+  <script src="../phongban/phongban.js"></script>
+  
+  <!-- Custom JS File -->
+  <script src="duan.js"></script>
+  
+  <!-- Script khắc phục lỗi hàm updateProject -->
+  <script>
+    // Nạp danh sách users vào dropdown
+    function loadUsers() {
+      const token = localStorage.getItem('accessToken') || sessionStorage.getItem('accessToken');
+      const myHeaders = new Headers();
+      myHeaders.append('Authorization', `Bearer ${token}`);
+      
+      const requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+      };
+      
+      // Lấy danh sách users từ API
+      fetch('http://localhost:3000/user', requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          if (result.statusCode === 200 && result.data) {
+            const users = result.data;
+            const userIdSelect = document.getElementById('user_id');
+            
+            if (userIdSelect) {
+              // Giữ lại option mặc định
+              const defaultOption = userIdSelect.options[0];
+              userIdSelect.innerHTML = '';
+              userIdSelect.appendChild(defaultOption);
+              
+              // Thêm các users vào dropdown
+              users.forEach(user => {
+                const option = document.createElement('option');
+                option.value = user.id;
+                option.text = `${user.username} (${user.role || 'User'})`;
+                userIdSelect.appendChild(option);
+              });
+            }
+            
+            // Nạp danh sách users vào các dropdown đã tạo động trong modal chỉnh sửa
+            const editModals = document.querySelectorAll('[id^="editModal-"]');
+            editModals.forEach(modal => {
+              const projectId = modal.id.split('-')[1];
+              const editUserIdSelect = document.getElementById(`user_id-${projectId}`);
+              
+              if (editUserIdSelect) {
+                // Giữ lại option được chọn hiện tại (nếu có)
+                const selectedValue = editUserIdSelect.value;
+                editUserIdSelect.innerHTML = '';
+                
+                // Thêm các users vào dropdown
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.text = '-- Chọn người phụ trách --';
+                defaultOption.disabled = true;
+                editUserIdSelect.appendChild(defaultOption);
+                
+                users.forEach(user => {
+                  const option = document.createElement('option');
+                  option.value = user.id;
+                  option.text = `${user.username} (${user.role || 'User'})`;
+                  
+                  if (selectedValue && user.id.toString() === selectedValue.toString()) {
+                    option.selected = true;
+                  }
+                  
+                  editUserIdSelect.appendChild(option);
+                });
+              }
+            });
+          } else {
+            console.error('Không thể lấy danh sách users:', result.message);
+          }
+        })
+        .catch(error => {
+          console.error('Lỗi khi gọi API lấy danh sách users:', error);
+        });
+    }
+    
+    // Gọi hàm loadUsers khi trang được tải
+    document.addEventListener('DOMContentLoaded', function() {
+      loadUsers();
+      
+      // Gọi lại loadUsers mỗi khi modal thêm dự án được mở
+      const addProjectModal = document.getElementById('addProjectModal');
+      if (addProjectModal) {
+        addProjectModal.addEventListener('show.bs.modal', function() {
+          loadUsers();
+        });
+      }
+      
+      // Ghi đè hàm updateProject trong duan.js để sử dụng đúng ID phần tử
+      window.updateProject = function(projectId) {
+        console.log(`Đang cập nhật dự án có ID: ${projectId}`);
+        console.log(`Sử dụng phần tử có ID: user_id-${projectId}`);
+        
+        // Lấy các giá trị từ form cập nhật
+        const name = document.getElementById(`name-${projectId}`).value;
+        const startDate = document.getElementById(`startDate-${projectId}`).value;
+        const endDate = document.getElementById(`endDate-${projectId}`).value;
+        const userId = document.getElementById(`user_id-${projectId}`).value;
+        
+        console.log('Giá trị user_id:', userId);
+        
+        // Kiểm tra các trường bắt buộc
+        if (!name || !startDate || !endDate || !userId) {
+          alert('Vui lòng điền đầy đủ thông tin dự án!');
+          return;
+        }
+        
+        // Kiểm tra ngày kết thúc phải sau ngày bắt đầu
+        if (new Date(endDate) < new Date(startDate)) {
+          alert('Ngày kết thúc phải sau ngày bắt đầu!');
+          return;
+        }
+        
+        // Tạo đối tượng dữ liệu gửi đi
+        const data = {
+          name: name,
+          start_date: startDate,
+          end_date: endDate,
+          client_id: userId && userId !== '' ? parseInt(userId) : null
+        };
+        
+        console.log('Dữ liệu cập nhật:', data);
+        
+        // Cấu hình request
+        const token = localStorage.getItem('accessToken') || sessionStorage.getItem('accessToken');
+        const myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/json');
+        myHeaders.append('Authorization', `Bearer ${token}`);
+        
+        const requestOptions = {
+          method: 'PATCH',
+          headers: myHeaders,
+          body: JSON.stringify(data),
+          redirect: 'follow'
+        };
+        
+        // Gọi API cập nhật
+        fetch(`http://localhost:3000/project/${projectId}`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log('Kết quả cập nhật:', result);
+            if (result.statusCode === 200) {
+              // Đóng modal và refresh dữ liệu
+              const modalElement = document.getElementById(`editModal-${projectId}`);
+              const modal = bootstrap.Modal.getInstance(modalElement);
+              modal.hide();
+              
+              // Thông báo thành công
+              alert('Cập nhật thông tin dự án thành công!');
+              
+              // Làm mới dữ liệu
+              location.reload();
+            } else {
+              alert(`Lỗi: ${result.message || 'Không thể cập nhật dự án'}`);
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Có lỗi xảy ra khi cập nhật thông tin dự án!');
+          });
+      };
+    });
+    
+    // Định nghĩa hàm updateProject global
+    window.updateProject = function(projectId) {
+      // Lấy các giá trị từ form cập nhật
+      const name = document.getElementById(`name-${projectId}`).value;
+      const startDate = document.getElementById(`startDate-${projectId}`).value;
+      const endDate = document.getElementById(`endDate-${projectId}`).value;
+      const userId = document.getElementById(`user_id-${projectId}`).value;
+      
+      // Kiểm tra các trường bắt buộc
+      if (!name || !startDate || !endDate || !userId) {
+        alert('Vui lòng điền đầy đủ thông tin dự án!');
+        return;
+      }
+      
+      // Kiểm tra ngày kết thúc phải sau ngày bắt đầu
+      if (new Date(endDate) < new Date(startDate)) {
+        alert('Ngày kết thúc phải sau ngày bắt đầu!');
+        return;
+      }
+      
+      // Tạo đối tượng dữ liệu gửi đi
+      const data = {
+        name: name,
+        start_date: startDate,
+        end_date: endDate,
+        client_id: userId && userId !== '' ? parseInt(userId) : null
+      };
+      
+      // Cấu hình request
+      const token = localStorage.getItem('accessToken') || sessionStorage.getItem('accessToken');
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Authorization', `Bearer ${token}`);
+      
+      const requestOptions = {
+        method: 'PATCH',
+        headers: myHeaders,
+        body: JSON.stringify(data),
+        redirect: 'follow'
+      };
+      
+      // Gọi API cập nhật
+      fetch(`http://localhost:3000/project/${projectId}`, requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          if (result.statusCode === 200) {
+            // Đóng modal và refresh dữ liệu
+            const modalElement = document.getElementById(`editModal-${projectId}`);
+            const modal = bootstrap.Modal.getInstance(modalElement);
+            modal.hide();
+            
+            // Thông báo thành công
+            alert('Cập nhật thông tin dự án thành công!');
+            
+            // Làm mới dữ liệu
+            location.reload(); // Làm mới trang để hiển thị dữ liệu mới
+          } else {
+            alert(`Lỗi: ${result.message}`);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Có lỗi xảy ra khi cập nhật thông tin dự án!');
+        });
+    };
+
+    // Định nghĩa hàm addNewProject nếu cần
+    window.addNewProject = function() {
+      console.log('Đang thêm dự án mới...');
+    
+      // Lấy giá trị từ form
+      const name = document.getElementById('projectName').value;
+      const startDate = document.getElementById('startDate').value;
+      const endDate = document.getElementById('endDate').value;
+      const userId = document.getElementById('user_id').value;
+    
+      // Validate form theo yêu cầu API
+      if (!name || !startDate || !endDate || !userId) {
+        alert('Vui lòng điền đầy đủ thông tin dự án!');
+        return;
+      }
+    
+      // Kiểm tra ngày kết thúc phải sau ngày bắt đầu
+      if (new Date(endDate) < new Date(startDate)) {
+        alert('Ngày kết thúc phải sau ngày bắt đầu!');
+        return;
+      }
+    
+      // Tạo đối tượng dữ liệu gửi đi
+      const projectData = {
+        name: name,
+        start_date: startDate,
+        end_date: endDate,
+        client_id: userId && userId !== '' ? parseInt(userId) : null
+      };
+    
+      console.log('Dữ liệu tạo dự án:', projectData);
+    
+      // Cấu hình request
+      const token = localStorage.getItem('accessToken') || sessionStorage.getItem('accessToken');
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Authorization', `Bearer ${token}`);
+    
+      const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: JSON.stringify(projectData),
+        redirect: 'follow'
+      };
+    
+      // Gọi API thêm dự án mới
+      fetch('http://localhost:3000/project', requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log('Kết quả tạo dự án:', result);
+          if (result.statusCode === 201) {
+            // Đóng modal sau khi thêm
+            const modal = document.getElementById('addProjectModal');
+            const modalInstance = bootstrap.Modal.getInstance(modal);
+            modal.hide();
+          
+            // Làm mới form
+            document.getElementById('addProjectForm').reset();
+          
+            // Thông báo thành công
+            alert('Thêm dự án mới thành công!');
+          
+            // Tải lại dữ liệu bảng
+            location.reload(); // Làm mới trang để hiển thị dự án mới
+          } else {
+            alert(`Lỗi: ${result.message || 'Không thể thêm dự án mới'}`);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Có lỗi xảy ra khi thêm dự án mới!');
+        });
+    };
+  </script>
+  
+  <!-- Modal thêm dự án mới -->
+  <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addProjectModalLabel">Thêm dự án mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addProjectForm">
+            <div class="mb-3">
+              <label for="projectName" class="form-label">Tên dự án</label>
+              <input type="text" class="form-control" id="projectName" required>
+            </div>
+            <div class="mb-3">
+              <label for="startDate" class="form-label">Ngày bắt đầu</label>
+              <input type="date" class="form-control" id="startDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="endDate" class="form-label">Ngày kết thúc</label>
+              <input type="date" class="form-control" id="endDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="user_id" class="form-label">Người phụ trách (User)</label>
+              <select class="form-select" id="user_id" required>
+                <option value="" selected disabled>-- Chọn người phụ trách --</option>
+                <!-- Danh sách users sẽ được nạp từ API -->
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="button" class="btn btn-primary" id="saveProjectBtn" onclick="window.addNewProject()">Lưu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

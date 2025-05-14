@@ -1,0 +1,106 @@
+/* Custom CSS for Pages-register module */
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #012970;
+  font-weight: 700;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(65, 84, 241, 0.25);
+  border-color: #4154f1;
+}
+
+.btn-primary {
+  background-color: #4154f1;
+  border-color: #4154f1;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #3242b8;
+  border-color: #3242b8;
+}
+
+/* Custom checkbox styling */
+.form-check-input:checked {
+  background-color: #4154f1;
+  border-color: #4154f1;
+}
+
+/* Animation for messages */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alert:not(.d-none) {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Form validation styling */
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid,
+.was-validated .form-check-input:invalid {
+  border-color: #dc3545;
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-select:valid,
+.was-validated .form-check-input:valid {
+  border-color: #198754;
+}
+
+/* Logo hover effect */
+.logo:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+/* Gender and department select customization */
+.form-select option {
+  padding: 10px;
+}
+
+/* Terms and conditions link */
+.form-check-label a {
+  color: #4154f1;
+  text-decoration: none;
+}
+
+.form-check-label a:hover {
+  text-decoration: underline;
+}
+
+/* Progress spinner */
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Birthdate input styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 0.6;
+  filter: invert(0.8);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 10px;
+  }
+}

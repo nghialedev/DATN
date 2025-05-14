@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Components /title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Trang Chủ</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="nhanvien.html">
+          <i class="bi bi-people"></i>
+          <span>Quản Lý Nhân Viên</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="phongban.html">
+          <i class="ri-group-2-line"></i>
+          <span>Quản Lý Phòng Ban</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="congviec.html">
+          <i class="bi bi-grid"></i>
+          <span>Quản Lý Công Việc</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="duan.html">
+          <i class="bi bi-grid"></i>
+          <span>Quản Lý Dự Án</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+   
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Quản lý nhân viên</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Quản lý nhân viên</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Danh sách nhân viên</h5>
+
+              <!-- Nút thêm nhân viên mới -->
+              <div class="mb-3 d-flex justify-content-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                  <i class="bi bi-plus-circle"></i> Thêm nhân viên mới
+                </button>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th class="text-center">
+                      Tên nhân viên
+                    </th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Giới tính</th>
+                    <th class="text-center">Cấp bậc</th>
+                    <th class="text-center">Vai trò</th>
+                    <th class="text-center" data-type="date" data-format="YYYY/DD/MM">Ngày sinh</th>
+                    <th class="text-center">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- API Data Fetching Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lấy token từ localStorage hoặc sessionStorage, nếu không có thì sử dụng giá trị mặc định
+      const accessToken = sessionStorage.getItem('accessToken') || localStorage.getItem('accessToken') || "your_access_token_here";
+      
+      // Kiểm tra nếu không có token thì chuyển hướng về trang đăng nhập
+      if (!accessToken || accessToken === "your_access_token_here") {
+        window.location.href = "pages-login.html";
+        return;
+      }
+      
+      const myHeaders = new Headers();
+      myHeaders.append("Authorization", `Bearer ${accessToken}`);
+      
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+      };
+      
+      fetch("http://localhost:3000/user", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          if (result.statusCode === 200 && result.data) {
+            populateTable(result.data);
+          } else {
+            console.error("Không thể lấy dữ liệu:", result.message);
+          }
+        })
+        .catch(error => console.error("Lỗi khi gọi API:", error));
+      
+      function populateTable(users) {
+        const tableBody = document.querySelector('.table.datatable tbody');
+        tableBody.innerHTML = ''; // Xóa dữ liệu cũ
+        
+        users.forEach(user => {
+          // Định dạng ngày sinh
+          const birthDate = new Date(user.birth_date);
+          const formattedDate = `${birthDate.getFullYear()}/${String(birthDate.getDate()).padStart(2, '0')}/${String(birthDate.getMonth() + 1).padStart(2, '0')}`;
+          
+          // Chuyển đổi giới tính sang tiếng Việt để hiển thị
+          const genderInVietnamese = user.gender === 'Male' ? 'Nam' : 'Nữ';
+          
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.username}</td>
+            <td>${user.email}</td>
+            <td>${genderInVietnamese}</td>
+            <td>${user.rate}</td>
+            <td>${user.role}</td>
+            <td>${formattedDate}</td>
+            <td>
+              <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#viewModal-${user.id}">
+                <i class="bi bi-eye"></i>
+              </button>
+              <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal-${user.id}">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal-${user.id}">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          `;
+          tableBody.appendChild(row);
+          
+          // Tạo các modal cho mỗi người dùng
+          createUserModals(user);
+        });
+        
+        // Khởi tạo lại DataTable sau khi thêm dữ liệu
+        const dataTable = document.querySelector('.datatable');
+        if (dataTable) {
+          new simpleDatatables.DataTable(dataTable);
+        }
+      }
+      
+      // Hàm tạo các modal cho người dùng
+      function createUserModals(user) {
+        // Chuyển đổi giới tính sang tiếng Việt để hiển thị
+        const genderInVietnamese = user.gender === 'Male' ? 'Nam' : 'Nữ';
+        
+        // Tạo modal xem chi tiết
+        const viewModal = document.createElement('div');
+        viewModal.className = 'modal fade';
+        viewModal.id = `viewModal-${user.id}`;
+        viewModal.tabIndex = '-1';
+        viewModal.setAttribute('aria-labelledby', `viewModalLabel-${user.id}`);
+        viewModal.setAttribute('aria-hidden', 'true');
+        
+        viewModal.innerHTML = `
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="viewModalLabel-${user.id}">Thông tin chi tiết: ${user.username}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p><strong>Username:</strong> ${user.username}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Giới tính:</strong> ${genderInVietnamese}</p>
+                <p><strong>Đánh giá:</strong> ${user.rate}</p>
+                <p><strong>Vai trò:</strong> ${user.role}</p>
+                <p><strong>Ngày sinh:</strong> ${new Date(user.birth_date).toLocaleDateString()}</p>
+                <p><strong>Trạng thái:</strong> ${user.is_active ? 'Đang hoạt động' : 'Không hoạt động'}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Tạo modal chỉnh sửa
+        const editModal = document.createElement('div');
+        editModal.className = 'modal fade';
+        editModal.id = `editModal-${user.id}`;
+        editModal.tabIndex = '-1';
+        editModal.setAttribute('aria-labelledby', `editModalLabel-${user.id}`);
+        editModal.setAttribute('aria-hidden', 'true');
+        
+        editModal.innerHTML = `
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel-${user.id}">Chỉnh sửa: ${user.username}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="editForm-${user.id}">
+                  <div class="mb-3">
+                    <label for="username-${user.id}" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username-${user.id}" value="${user.username}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email-${user.id}" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email-${user.id}" value="${user.email}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="gender-${user.id}" class="form-label">Giới tính</label>
+                    <select class="form-select" id="gender-${user.id}">
+                      <option value="male" ${user.gender === 'Male' ? 'selected' : ''}>Nam</option>
+                      <option value="female" ${user.gender === 'Female' ? 'selected' : ''}>Nữ</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="rate-${user.id}" class="form-label">Đánh giá</label>
+                    <input type="number" class="form-control" id="rate-${user.id}" value="${user.rate}" min="1" max="5">
+                  </div>
+                  <div class="mb-3">
+                    <label for="role-${user.id}" class="form-label">Vai trò</label>
+                    <input type="text" class="form-control" id="role-${user.id}" value="${user.role}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="birthdate-${user.id}" class="form-label">Ngày sinh</label>
+                    <input type="date" class="form-control" id="birthdate-${user.id}" value="${user.birth_date.split('T')[0]}">
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="active-${user.id}" ${user.is_active ? 'checked' : ''}>
+                    <label class="form-check-label" for="active-${user.id}">Đang hoạt động</label>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary" onclick="updateUser(${user.id})">Lưu thay đổi</button>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Tạo modal xóa
+        const deleteModal = document.createElement('div');
+        deleteModal.className = 'modal fade';
+        deleteModal.id = `deleteModal-${user.id}`;
+        deleteModal.tabIndex = '-1';
+        deleteModal.setAttribute('aria-labelledby', `deleteModalLabel-${user.id}`);
+        deleteModal.setAttribute('aria-hidden', 'true');
+        
+        deleteModal.innerHTML = `
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel-${user.id}">Xác nhận xóa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Bạn có chắc chắn muốn xóa người dùng <strong>${user.username}</strong>?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-danger" onclick="deleteUser(${user.id})">Xóa</button>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Thêm các modal vào body
+        document.body.appendChild(viewModal);
+        document.body.appendChild(editModal);
+        document.body.appendChild(deleteModal);
+      }
+      
+      // Thêm các hàm xử lý sự kiện vào window để có thể gọi từ các modal
+      window.updateUser = function(userId) {
+        const username = document.getElementById(`username-${userId}`).value;
+        const email = document.getElementById(`email-${userId}`).value;
+        const gender = document.getElementById(`gender-${userId}`).value;
+        const rate = document.getElementById(`rate-${userId}`).value;
+        const role = document.getElementById(`role-${userId}`).value;
+        const birthDate = document.getElementById(`birthdate-${userId}`).value;
+        const isActive = document.getElementById(`active-${userId}`).checked;
+        
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const raw = JSON.stringify({
+          "department_id": 1,
+          "username": username,
+          "email": email,
+          "gender": gender,
+          "birth_date": birthDate,
+          "profile": "image.png",
+          "rate": parseInt(rate),
+          "role": role,
+          "is_active": isActive
+        });
+        
+        const requestOptions = {
+          method: "PATCH",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/user/${userId}`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log(result);
+            if (result.statusCode === 200) {
+              alert("Cập nhật thông tin nhân viên thành công!");
+              // Đóng modal sau khi cập nhật
+              const modal = document.getElementById(`editModal-${userId}`);
+              const modalInstance = bootstrap.Modal.getInstance(modal);
+              modalInstance.hide();
+              
+              // Tải lại dữ liệu bảng
+              location.reload();
+            } else {
+              alert("Lỗi: " + result.message);
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi cập nhật thông tin nhân viên:", error);
+            alert("Đã xảy ra lỗi khi cập nhật thông tin nhân viên!");
+          });
+      };
+      
+      window.deleteUser = function(userId) {
+        const myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        
+        const requestOptions = {
+          method: "DELETE",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+        
+        fetch(`http://localhost:3000/user/${userId}`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log(result);
+            if (result.statusCode === 200) {
+              alert("Xóa nhân viên thành công!");
+              // Đóng modal sau khi xóa
+              const modal = document.getElementById(`deleteModal-${userId}`);
+              const modalInstance = bootstrap.Modal.getInstance(modal);
+              modalInstance.hide();
+              
+              // Tải lại dữ liệu bảng
+              location.reload();
+            } else {
+              alert("Lỗi: " + result.message);
+            }
+          })
+          .catch(error => {
+            console.error("Lỗi khi xóa nhân viên:", error);
+            alert("Đã xảy ra lỗi khi xóa nhân viên!");
+          });
+      };
+    });
+  </script>
+  
+  <!-- Modal thêm người dùng mới -->
+  <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addUserModalLabel">Thêm nhân viên mới</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addUserForm">
+            <div class="mb-3">
+              <label for="new-username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="new-username" required>
+            </div>
+            <div class="mb-3">
+              <label for="new-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="new-email" required>
+            </div>
+            <div class="mb-3">
+              <label for="new-password" class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" id="new-password" required>
+            </div>
+            <div class="mb-3">
+              <label for="new-gender" class="form-label">Giới tính</label>
+              <select class="form-select" id="new-gender" required>
+                <option value="Male">Nam</option>
+                <option value="Female">Nữ</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="new-rate" class="form-label">Đánh giá</label>
+              <input type="number" class="form-control" id="new-rate" value="5" min="1" max="5">
+            </div>
+            <div class="mb-3">
+              <label for="new-role" class="form-label">Vai trò</label>
+              <input type="text" class="form-control" id="new-role" value="developer">
+            </div>
+            <div class="mb-3">
+              <label for="new-birthdate" class="form-label">Ngày sinh</label>
+              <input type="date" class="form-control" id="new-birthdate" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="new-active">
+              <label class="form-check-label" for="new-active">Đang hoạt động</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-primary" onclick="addNewUser()">Thêm mới</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Hàm thêm người dùng mới
+    function addNewUser() {
+      const username = document.getElementById('new-username').value;
+      const email = document.getElementById('new-email').value;
+      const password = document.getElementById('new-password').value;
+      const gender = document.getElementById('new-gender').value;
+      const rate = document.getElementById('new-rate').value;
+      const role = document.getElementById('new-role').value;
+      const birthDate = document.getElementById('new-birthdate').value;
+      const isActive = document.getElementById('new-active').checked;
+      
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      
+      const raw = JSON.stringify({
+        "department_id": 1,
+        "username": username,
+        "email": email,
+        "password": password,
+        "gender": gender,
+        "birth_date": birthDate,
+        "profile": "image.png",
+        "rate": parseInt(rate)
+      });
+      
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+      };
+      
+      fetch("http://localhost:3000/user", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result);
+          if (result.statusCode === 201) {
+            alert("Thêm nhân viên mới thành công!");
+            // Đóng modal sau khi thêm
+            const modal = document.getElementById('addUserModal');
+            const modalInstance = bootstrap.Modal.getInstance(modal);
+            modalInstance.hide();
+            
+            // Làm mới form
+            document.getElementById('addUserForm').reset();
+            
+            // Tải lại dữ liệu bảng
+            location.reload();
+          } else {
+            alert("Lỗi: " + result.message);
+          }
+        })
+        .catch(error => {
+          console.error("Lỗi khi thêm nhân viên:", error);
+          alert("Đã xảy ra lỗi khi thêm nhân viên mới!");
+        });
+    }
+  </script>
+
+</body>
+
+</html>
